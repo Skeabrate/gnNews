@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import activeViewSlice from './activeViewSlice';
+import activeViewSlice from './slices/activeViewSlice';
+import articlesCountSlice from './slices/articlesCount';
 
 export const store = configureStore({
   reducer: {
     activeView: activeViewSlice,
+    articlesCount: articlesCountSlice,
   },
 });
 

@@ -1,15 +1,20 @@
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '../Redux/hooks';
 
 const Footer = () => {
-  const currentDate = new Date();
-  const currentHour = currentDate.getHours();
-  const currentMin = currentDate.getMinutes();
-  const hoursMin =
-    (currentHour <= 9 ? `0${currentHour}` : currentHour) +
-    ':' +
-    (currentMin <= 9 ? `0${currentMin}` : currentMin);
+  const articlesCount = useAppSelector((state) => state.articlesCount);
 
-  const articlesCount = 0;
+  const getDate = () => {
+    const currentDate = new Date();
+    const currentHour = currentDate.getHours();
+    const currentMin = currentDate.getMinutes();
+
+    return (
+      (currentHour <= 9 ? `0${currentHour}` : currentHour) +
+      ':' +
+      (currentMin <= 9 ? `0${currentMin}` : currentMin)
+    );
+  };
 
   return (
     <footer className='bg-zinc-900 pb-6 text-center text-white'>
@@ -18,7 +23,7 @@ const Footer = () => {
           <span className='text-brand'>gn</span>News
         </h2>
       </Link>
-      <p className='font-bold'>{hoursMin}</p>
+      <p className='font-bold'>{getDate()}</p>
       <p>
         Current articles: <span className='font-bold'>{articlesCount}</span>
       </p>

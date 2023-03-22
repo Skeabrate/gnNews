@@ -1,19 +1,23 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import NewsArticles from '../components/NewsArticles';
+import { useAppDispatch } from '../Redux/hooks';
+import { updateArticlesCount } from '../Redux/slices/articlesCount';
 import { COUNTRIES } from '../utils/countries';
+import { NEWS_API_URL } from '../utils/news-api';
+import NewsArticles from '../components/NewsArticles';
 
 const Country = () => {
   const { code } = useParams();
+  const dispatch = useAppDispatch();
 
   const { isLoading, isError, data, isRefetching } = useQuery(
     ['news', code],
-    () =>
-      fetch(
-        `https://newsapi.org/v2/top-headlines?country=${code?.toLowerCase()}&apiKey=3ff29cca866a4f0cae5202cef9e9008a`
-      ).then((res) => res.json()),
+    () => fetch(NEWS_API_URL(code)).then((res) => res.json()),
     {
       refetchOnWindowFocus: false,
+      onSuccess: (data) => {
+        dispatch(updateArticlesCount(data?.articles?.length));
+      },
     }
   );
 

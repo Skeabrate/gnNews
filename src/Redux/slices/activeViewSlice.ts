@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { NEWS_VIEWS, TNewsView } from '../utils/newsViews';
+import { NEWS_VIEWS, TNewsView } from '../../utils/newsViews';
 
 const initialState: TNewsView['value'] = NEWS_VIEWS[0].value;
 

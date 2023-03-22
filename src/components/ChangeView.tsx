@@ -3,7 +3,7 @@ import { useSelect } from 'downshift';
 import cx from 'classnames';
 import { NEWS_VIEWS, TNewsView } from '../utils/newsViews';
 import { useAppDispatch } from '../Redux/hooks';
-import { changeActiveView } from '../Redux/activeViewSlice';
+import { changeActiveView } from '../Redux/slices/activeViewSlice';
 
 const ChangeView = () => {
   const dispatch = useAppDispatch();

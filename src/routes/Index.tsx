@@ -1,20 +1,25 @@
 import { useQuery } from 'react-query';
+import { useAppDispatch } from '../Redux/hooks';
+import { updateArticlesCount } from '../Redux/slices/articlesCount';
+import { NEWS_API_URL } from '../utils/news-api';
 import NewsArticles from '../components/NewsArticles';
 
-const Index = () => {
-  const indexCountry = {
-    code: 'US',
-    name: 'United States',
-  };
+const indexCountry = {
+  code: 'US',
+  name: 'United States',
+};
 
-  const { isLoading, isError, data } = useQuery(
+const Index = () => {
+  const dispatch = useAppDispatch();
+
+  const { isLoading, isRefetching, isError, data } = useQuery(
     'indexNews',
-    () =>
-      fetch(
-        `https://newsapi.org/v2/top-headlines?country=${indexCountry.code.toLowerCase()}&apiKey=3ff29cca866a4f0cae5202cef9e9008a`
-      ).then((res) => res.json()),
+    () => fetch(NEWS_API_URL(indexCountry.code)).then((res) => res.json()),
     {
       refetchOnWindowFocus: false,
+      onSuccess: (data) => {
+        dispatch(updateArticlesCount(data?.articles?.length));
+      },
     }
   );
 
@@ -22,7 +27,7 @@ const Index = () => {
     <NewsArticles
       articles={data?.articles}
       country={indexCountry.name}
-      isLoading={isLoading}
+      isLoading={isLoading || isRefetching}
       isError={isError}
     />
   );
