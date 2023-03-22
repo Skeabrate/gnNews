@@ -1,9 +1,12 @@
 import { useQuery } from 'react-query';
+import NewsGrid from '../components/NewsGrid';
 
 const Index = () => {
+  const indexCountry = 'US';
+
   const { isLoading, error, data } = useQuery('repoData', () =>
     fetch(
-      'https://newsapi.org/v2/top-headlines?country=pl&apiKey=3ff29cca866a4f0cae5202cef9e9008a'
+      `https://newsapi.org/v2/top-headlines?country=${indexCountry.toLowerCase()}&apiKey=3ff29cca866a4f0cae5202cef9e9008a`
     ).then((res) => res.json())
   );
 
@@ -11,10 +14,12 @@ const Index = () => {
 
   if (error) return <>An error has occurred: {error instanceof Error && error.message}</>;
 
-  console.log(data.articles);
   return (
     <>
-      <h1>index page</h1>
+      <NewsGrid
+        articles={data.articles}
+        country={indexCountry}
+      />
     </>
   );
 };

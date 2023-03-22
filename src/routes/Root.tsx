@@ -10,7 +10,7 @@ export default function Root() {
     <QueryClientProvider client={queryClient}>
       <Header />
 
-      <main className='max-w-4xl mx-auto px-4 py-12'>
+      <main className='max-w-5xl mx-auto px-4 py-12'>
         <Outlet />
       </main>
 
