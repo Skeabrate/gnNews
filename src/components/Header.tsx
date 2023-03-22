@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className='max-w-4xl mx-auto py-6 border-b border-gray-300 px-4 mb-8 flex items-center justify-between gap-3'>
+    <header className='max-w-4xl mx-auto py-6 border-b border-gray-300 px-4 flex items-center justify-between gap-3'>
       <Link
         to='/'
         className='font-bold text-3xl'

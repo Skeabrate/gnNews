@@ -12,7 +12,7 @@ const Footer = () => {
   const articlesCount = 0;
 
   return (
-    <footer className='bg-black text-white text-center pb-6'>
+    <footer className='bg-zinc-900 text-white text-center pb-6'>
       <Link to='/'>
         <h2 className='font-bold text-4xl py-10 hover:scale-105 transition-transform'>
           <span className='text-lime-500'>gn</span>News
