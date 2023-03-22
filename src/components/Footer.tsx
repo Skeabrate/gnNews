@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   const currentDate = new Date();
   const currentHour = currentDate.getHours();
@@ -10,8 +12,12 @@ const Footer = () => {
   const articlesCount = 0;
 
   return (
-    <footer className='bg-black text-white text-center pt-12 pb-6'>
-      <h2 className='font-bold text-3xl pb-6'>GnNews</h2>
+    <footer className='bg-black text-white text-center pb-6'>
+      <Link to='/'>
+        <h2 className='font-bold text-4xl py-10 hover:scale-105 transition-transform'>
+          <span className='text-lime-500'>gn</span>News
+        </h2>
+      </Link>
 
       <p>{hoursMin}</p>
 
