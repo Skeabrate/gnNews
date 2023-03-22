@@ -3,12 +3,12 @@ import ChangeView from './ChangeView';
 
 const Header = () => {
   return (
-    <header className='max-w-6xl mx-auto py-4 sm:py-6 border-b border-gray-300 px-2 sm:px-4 flex items-center justify-between gap-3'>
+    <header className='mx-auto flex max-w-6xl items-center justify-between gap-3 border-b border-gray-300 py-4 px-2 sm:py-6 sm:px-4'>
       <Link
         to='/'
-        className='font-bold text-3xl'
+        className='text-3xl font-bold'
       >
-        <h1 className='hover:scale-105 transition-transform origin-center'>
+        <h1 className='origin-center transition-transform hover:scale-105'>
           <span className='text-lime-500'>gn</span>News
         </h1>
       </Link>

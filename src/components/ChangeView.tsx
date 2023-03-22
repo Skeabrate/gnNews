@@ -23,9 +23,9 @@ const ChangeView = () => {
 
   return (
     <div>
-      <div className='w-28 flex flex-col gap-1 border border-gray-300'>
+      <div className='flex w-28 flex-col gap-1 border border-gray-300'>
         <div
-          className='p-2 bg-white flex justify-between cursor-pointer'
+          className='flex cursor-pointer justify-between bg-white p-2'
           {...getToggleButtonProps()}
         >
           <div className='grid grid-cols-2 items-center'>{selectedItem.label}</div>
@@ -33,7 +33,7 @@ const ChangeView = () => {
         </div>
       </div>
       <ul
-        className={`absolute z-10 w-28 bg-white mt-1 shadow-md p-0 border${!isOpen && 'hidden'}`}
+        className={`absolute z-10 mt-1 w-28 bg-white p-0 shadow-md border${!isOpen && 'hidden'}`}
         {...getMenuProps()}
       >
         {isOpen &&
@@ -42,7 +42,7 @@ const ChangeView = () => {
               className={cx(
                 highlightedIndex === index && 'bg-blue-200',
                 selectedItem === item && 'font-bold',
-                'py-2 px-3 shadow-sm flex cursor-pointer'
+                'flex cursor-pointer py-2 px-3 shadow-sm'
               )}
               key={`${item.value}${index}`}
               {...getItemProps({ item, index })}

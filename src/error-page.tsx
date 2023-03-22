@@ -5,12 +5,12 @@ export default function ErrorPage() {
   console.error(error);
 
   return (
-    <main className='flex flex-col items-center justify-center min-h-screen text-lg'>
-      <h1 className='mb-12 font-extrabold text-6xl'>Oops!</h1>
+    <main className='flex min-h-screen flex-col items-center justify-center text-lg'>
+      <h1 className='mb-12 text-6xl font-extrabold'>Oops!</h1>
       <p className='mb-6'>Sorry, an unexpected error has occurred.</p>
       <p>
         {/*  @ts-ignore */}
-        <i className='text-gray-500 font-bold'>{error.statusText || error.message}</i>
+        <i className='font-bold text-gray-500'>{error.statusText || error.message}</i>
       </p>
     </main>
   );

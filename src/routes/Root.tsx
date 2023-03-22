@@ -14,7 +14,7 @@ export default function Root() {
       <Provider store={store}>
         <Header />
 
-        <div className='grid sm:grid-cols-[200px,1fr] max-w-6xl mx-auto px-2 sm:px-4 py-12'>
+        <div className='mx-auto grid max-w-6xl px-2 py-12 sm:grid-cols-[200px,1fr] sm:px-4'>
           <SideMenu />
 
           <main>
