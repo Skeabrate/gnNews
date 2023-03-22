@@ -2,11 +2,14 @@ import { useQuery } from 'react-query';
 import NewsArticles from '../components/NewsArticles';
 
 const Index = () => {
-  const indexCountry = 'US';
+  const indexCountry = {
+    code: 'US',
+    name: 'United States',
+  };
 
   const { isLoading, error, data } = useQuery('repoData', () =>
     fetch(
-      `https://newsapi.org/v2/top-headlines?country=${indexCountry.toLowerCase()}&apiKey=3ff29cca866a4f0cae5202cef9e9008a`
+      `https://newsapi.org/v2/top-headlines?country=${indexCountry.code.toLowerCase()}&apiKey=3ff29cca866a4f0cae5202cef9e9008a`
     ).then((res) => res.json())
   );
 
@@ -17,7 +20,7 @@ const Index = () => {
   return (
     <NewsArticles
       articles={data.articles}
-      country={indexCountry}
+      country={indexCountry.name}
     />
   );
 };

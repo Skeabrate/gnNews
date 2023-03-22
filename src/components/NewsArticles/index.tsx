@@ -9,8 +9,8 @@ const NewsArticles = ({ articles, country }: { articles: TArticle[]; country: st
 
   return (
     <section>
-      <h1 className='border-l-8 h-12 mb-6 text-xl font-semibold pl-3 flex items-center border-lime-400'>
-        Latest news from {country}
+      <h1 className='border-l-8 mb-6 text-xl font-semibold leading-6 text-left items-start pl-3 flex flex-col justify-start  border-lime-500'>
+        Latest news <span> from {country}</span>
       </h1>
 
       {viewType === NEWS_VIEWS[0].value ? (
