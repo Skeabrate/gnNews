@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { Outlet } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import SideMenu from '../components/SideMenu';
 
 const queryClient = new QueryClient();
 
@@ -10,7 +11,9 @@ export default function Root() {
     <QueryClientProvider client={queryClient}>
       <Header />
 
-      <main className='max-w-5xl mx-auto px-4 py-12'>
+      <SideMenu />
+
+      <main className='max-w-6xl mx-auto px-2 sm:px-4 py-12'>
         <Outlet />
       </main>
 

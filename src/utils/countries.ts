@@ -12,7 +12,7 @@ export const COUNTRIES = [
   { name: 'Czech Republic', code: 'CZ' },
   { name: 'Eqypt', code: 'EG' },
   { name: 'France', code: 'FR' },
-  { name: 'Germany', code: 'de' },
+  { name: 'Germany', code: 'DE' },
   { name: 'Greece', code: 'GR' },
   { name: 'Hong Kong', code: 'HK' },
   { name: 'Hungary', code: 'HU' },

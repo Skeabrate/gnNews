@@ -1,10 +1,9 @@
-// <img src='https://flagsapi.com/BR/flat/64.png'></img>;
 import { Link } from 'react-router-dom';
 import ChangeView from './ChangeView';
 
 const Header = () => {
   return (
-    <header className='max-w-5xl mx-auto py-6 border-b border-gray-300 px-4 flex items-center justify-between gap-3'>
+    <header className='max-w-6xl mx-auto py-4 sm:py-6 border-b border-gray-300 px-2 sm:px-4 flex items-center justify-between gap-3'>
       <Link
         to='/'
         className='font-bold text-3xl'
@@ -14,12 +13,10 @@ const Header = () => {
         </h1>
       </Link>
 
-      <div className='flex gap-2'>
+      <div className='flex gap-3'>
+        <button className='border px-3'>Popup</button>
+
         <ChangeView />
-
-        <button>Popup</button>
-
-        <button>Hamburger</button>
       </div>
     </header>
   );
