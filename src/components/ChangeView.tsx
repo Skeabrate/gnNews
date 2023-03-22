@@ -33,7 +33,7 @@ const ChangeView = () => {
         </div>
       </div>
       <ul
-        className={`absolute w-28 bg-white mt-1 shadow-md p-0 border${!isOpen && 'hidden'}`}
+        className={`absolute z-10 w-28 bg-white mt-1 shadow-md p-0 border${!isOpen && 'hidden'}`}
         {...getMenuProps()}
       >
         {isOpen &&

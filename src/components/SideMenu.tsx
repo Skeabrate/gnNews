@@ -20,12 +20,12 @@ const SideMenu = () => {
 
       <nav
         className={cx(
-          'bg-white sm:pb-4 sm:mr-4 sm:static fixed sm:w-fit right-0 transition-transform duration-500 -translate-x-full sm:translate-x-0 w-full top-0 h-full overflow-y-auto',
+          'bg-white sm:pb-4 sm:mr-4 sm:static fixed sm:overflow-clip sm:w-fit right-0 transition-transform duration-500 -translate-x-full sm:translate-x-0 w-full top-0 h-full overflow-y-auto',
           isMenuActive && 'translate-x-0'
         )}
       >
         <div className='h-12 w-full flex bg-lime-500 text-white sm:cursor-default font-bold text-sm leading-none'>
-          <h2 className='flex items-center justify-center w-full'>Chose Country:</h2>
+          <p className='flex items-center justify-center w-full'>Chose Country:</p>
 
           <button
             onClick={toggleMenu}
