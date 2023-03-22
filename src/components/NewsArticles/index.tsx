@@ -9,7 +9,7 @@ const NewsArticles = ({ articles, country }: { articles: TArticle[]; country: st
 
   return (
     <section>
-      <h1 className='border-l-8 mb-6 text-xl font-semibold pl-2 border-lime-400'>
+      <h1 className='border-l-8 h-12 mb-6 text-xl font-semibold pl-3 flex items-center border-lime-400'>
         Latest news from {country}
       </h1>
 

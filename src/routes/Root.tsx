@@ -14,11 +14,13 @@ export default function Root() {
       <Provider store={store}>
         <Header />
 
-        {/* <SideMenu /> */}
+        <div className='grid sm:grid-cols-[200px,1fr] max-w-6xl mx-auto px-2 sm:px-4 py-12'>
+          <SideMenu />
 
-        <main className='max-w-6xl mx-auto px-2 sm:px-4 py-12'>
-          <Outlet />
-        </main>
+          <main>
+            <Outlet />
+          </main>
+        </div>
 
         <Footer />
       </Provider>

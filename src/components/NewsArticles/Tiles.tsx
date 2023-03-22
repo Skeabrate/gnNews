@@ -4,7 +4,7 @@ import PlaceholderImage from '../../assets/placeholder-image.jpg';
 
 const Tiles = ({ articles }: { articles: TArticle[] }) => {
   return (
-    <div className='grid grid-cols-fluid gap-x-6 gap-y-8'>
+    <div className='grid sm:grid-cols-fluid gap-x-6 gap-y-8'>
       {articles.map(
         (
           { author, publishedAt, title, urlToImage, source: { name }, url, content, description },
@@ -18,7 +18,7 @@ const Tiles = ({ articles }: { articles: TArticle[] }) => {
               <img
                 src={urlToImage || PlaceholderImage}
                 alt={title}
-                className='h-44 object-cover w-full mb-1'
+                className='h-56 sm:h-44 object-cover w-full mb-1'
               />
 
               <p className='text-red-500 font-bold text-sm mb-2'>{name}</p>

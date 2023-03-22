@@ -15,12 +15,10 @@ const Index = () => {
   if (error) return <>An error has occurred: {error instanceof Error && error.message}</>;
 
   return (
-    <>
-      <NewsArticles
-        articles={data.articles}
-        country={indexCountry}
-      />
-    </>
+    <NewsArticles
+      articles={data.articles}
+      country={indexCountry}
+    />
   );
 };
 
