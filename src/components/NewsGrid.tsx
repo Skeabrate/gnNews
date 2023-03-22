@@ -24,8 +24,10 @@ const NewsGrid = ({ articles, country }: { articles: TArticle[]; country: string
                 <img
                   src={urlToImage || PlaceholderImage}
                   alt={title}
-                  className='h-44 object-cover w-full mb-3'
+                  className='h-44 object-cover w-full mb-1'
                 />
+
+                <p className='text-red-500 font-bold text-sm mb-2'>{name}</p>
 
                 <h2 className='font-bold leading-tight mb-2'>{title}</h2>
 
