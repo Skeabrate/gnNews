@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className='bg-zinc-900 pb-6 text-center text-white'>
       <Link to='/'>
-        <h2 className='py-10 text-4xl font-bold transition-transform hover:scale-105'>
+        <h2 className='mx-auto w-fit py-10 text-4xl font-bold transition-transform hover:scale-105'>
           <span className='text-brand'>gn</span>News
         </h2>
       </Link>
