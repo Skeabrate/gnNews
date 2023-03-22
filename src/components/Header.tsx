@@ -1,5 +1,6 @@
 // <img src='https://flagsapi.com/BR/flat/64.png'></img>;
 import { Link } from 'react-router-dom';
+import ChangeView from './ChangeView';
 
 const Header = () => {
   return (
@@ -14,7 +15,7 @@ const Header = () => {
       </Link>
 
       <div className='flex gap-2'>
-        <button>Widok</button>
+        <ChangeView />
 
         <button>Popup</button>
 
