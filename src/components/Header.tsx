@@ -14,7 +14,7 @@ const Header = () => {
       </Link>
 
       <div className='flex gap-3'>
-        <button className='border px-3'>Popup</button>
+        <button className='border border-gray-300 px-3'>Popup</button>
 
         <ChangeView />
       </div>

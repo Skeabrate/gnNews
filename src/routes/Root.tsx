@@ -14,7 +14,7 @@ export default function Root() {
       <Provider store={store}>
         <Header />
 
-        <SideMenu />
+        {/* <SideMenu /> */}
 
         <main className='max-w-6xl mx-auto px-2 sm:px-4 py-12'>
           <Outlet />

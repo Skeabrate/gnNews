@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import NewsGrid from '../components/NewsGrid';
+import NewsArticles from '../components/NewsArticles';
 
 const Index = () => {
   const indexCountry = 'US';
@@ -16,7 +16,7 @@ const Index = () => {
 
   return (
     <>
-      <NewsGrid
+      <NewsArticles
         articles={data.articles}
         country={indexCountry}
       />
