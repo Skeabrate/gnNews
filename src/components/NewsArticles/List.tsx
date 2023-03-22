@@ -3,7 +3,7 @@ import { formatDate } from '../../utils/formatDate';
 
 const List = ({ articles }: { articles: TArticle[] }) => {
   return (
-    <div className='grid gap-5'>
+    <div className='grid animate-fadeIn gap-5 opacity-0'>
       {articles.map(({ author, publishedAt, title, source: { name }, url, content }, idx) => (
         <article key={idx}>
           <button

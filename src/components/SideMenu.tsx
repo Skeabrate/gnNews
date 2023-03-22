@@ -41,6 +41,7 @@ const SideMenu = () => {
               <Link
                 className='flex items-center gap-3 border-t border-gray-200 px-2 py-2 transition-colors duration-75 hover:bg-gray-200 sm:px-0'
                 to={`/country/${code.toLowerCase()}`}
+                onClick={toggleMenu}
               >
                 <img
                   src={`https://flagsapi.com/${code}/flat/32.png`}

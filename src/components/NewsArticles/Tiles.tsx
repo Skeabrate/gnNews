@@ -4,7 +4,7 @@ import PlaceholderImage from '../../assets/placeholder-image.jpg';
 
 const Tiles = ({ articles }: { articles: TArticle[] }) => {
   return (
-    <div className='grid gap-x-6 gap-y-8 sm:grid-cols-fluid'>
+    <div className='grid animate-fadeIn gap-x-6 gap-y-8 sm:grid-cols-fluid'>
       {articles.map(
         (
           { author, publishedAt, title, urlToImage, source: { name }, url, content, description },
