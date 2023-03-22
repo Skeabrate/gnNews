@@ -7,10 +7,15 @@ const Index = () => {
     name: 'United States',
   };
 
-  const { isLoading, isError, data } = useQuery('indexNews', () =>
-    fetch(
-      `https://newsapi.org/v2/top-headlines?country=${indexCountry.code.toLowerCase()}&apiKey=3ff29cca866a4f0cae5202cef9e9008a`
-    ).then((res) => res.json())
+  const { isLoading, isError, data } = useQuery(
+    'indexNews',
+    () =>
+      fetch(
+        `https://newsapi.org/v2/top-headlines?country=${indexCountry.code.toLowerCase()}&apiKey=3ff29cca866a4f0cae5202cef9e9008a`
+      ).then((res) => res.json()),
+    {
+      refetchOnWindowFocus: false,
+    }
   );
 
   return (

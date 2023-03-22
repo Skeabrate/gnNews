@@ -15,13 +15,13 @@ const Footer = () => {
     <footer className='bg-zinc-900 pb-6 text-center text-white'>
       <Link to='/'>
         <h2 className='py-10 text-4xl font-bold transition-transform hover:scale-105'>
-          <span className='text-lime-500'>gn</span>News
+          <span className='text-brand'>gn</span>News
         </h2>
       </Link>
-
-      <p>{hoursMin}</p>
-
-      <p>Liczba dostępnych artykułów: {articlesCount}</p>
+      <p className='font-bold'>{hoursMin}</p>
+      <p>
+        Current articles: <span className='font-bold'>{articlesCount}</span>
+      </p>
     </footer>
   );
 };

@@ -9,7 +9,7 @@ const Header = () => {
         className='text-3xl font-bold'
       >
         <h1 className='origin-center transition-transform hover:scale-105'>
-          <span className='text-lime-500'>gn</span>News
+          <span className='text-brand'>gn</span>News
         </h1>
       </Link>
 

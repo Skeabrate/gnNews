@@ -12,7 +12,7 @@ const SideMenu = () => {
     <>
       <button
         onClick={toggleMenu}
-        className='absolute right-3 mt-1 bg-lime-500 px-4 py-2 text-xs font-bold leading-3 text-white sm:hidden'
+        className='absolute right-3 mt-1 bg-brandDarker px-4 py-2 text-xs font-bold leading-3 text-white sm:hidden'
       >
         Chose <br />
         Country
@@ -24,7 +24,7 @@ const SideMenu = () => {
           isMenuActive && 'translate-x-0'
         )}
       >
-        <div className='flex h-12 w-full bg-lime-500 text-sm font-bold leading-none text-white sm:cursor-default'>
+        <div className='flex h-12 w-full bg-brandDarker text-sm font-bold leading-none text-white sm:cursor-default'>
           <p className='flex w-full items-center justify-center'>Chose Country:</p>
 
           <button

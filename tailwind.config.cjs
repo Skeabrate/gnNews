@@ -6,6 +6,10 @@ module.exports = {
       gridTemplateColumns: {
         fluid: 'repeat(auto-fit, minmax(240px, 1fr))',
       },
+      colors: {
+        brand: '#D5EB04',
+        brandDarker: '#cadf03',
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },

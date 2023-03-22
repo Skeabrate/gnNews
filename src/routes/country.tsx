@@ -6,10 +6,15 @@ import { COUNTRIES } from '../utils/countries';
 const Country = () => {
   const { code } = useParams();
 
-  const { isLoading, isError, data, isRefetching } = useQuery(['indexNews', code], () =>
-    fetch(
-      `https://newsapi.org/v2/top-headlines?country=${code?.toLowerCase()}&apiKey=3ff29cca866a4f0cae5202cef9e9008a`
-    ).then((res) => res.json())
+  const { isLoading, isError, data, isRefetching } = useQuery(
+    ['news', code],
+    () =>
+      fetch(
+        `https://newsapi.org/v2/top-headlines?country=${code?.toLowerCase()}&apiKey=3ff29cca866a4f0cae5202cef9e9008a`
+      ).then((res) => res.json()),
+    {
+      refetchOnWindowFocus: false,
+    }
   );
 
   const getFullCountryName = (code: string | undefined) =>
