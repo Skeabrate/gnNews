@@ -35,7 +35,7 @@ const SideMenu = () => {
           </button>
         </div>
 
-        <ul className='flex flex-col gap-1 px-3 sm:sticky sm:top-0 sm:h-screen sm:overflow-y-auto sm:pr-4 sm:pl-0'>
+        <ul className='custom-scrollbar flex flex-col gap-1 px-3 sm:sticky sm:top-0 sm:h-screen sm:overflow-y-auto sm:pr-4 sm:pl-0'>
           {COUNTRIES.map(({ code, name }) => (
             <li key={code}>
               <Link
