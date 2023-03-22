@@ -1,6 +1,7 @@
 import { useAppSelector } from '../../Redux/hooks';
 import { TArticle } from '../../types/article';
 import { NEWS_VIEWS } from '../../utils/newsViews';
+import ClipLoader from 'react-spinners/ClipLoader';
 import List from './List';
 import Tiles from './Tiles';
 
@@ -32,7 +33,9 @@ const NewsArticles = ({
       </h1>
 
       {isLoading ? (
-        <p>Loading ...</p>
+        <p className='flex min-h-[400px] items-center justify-center '>
+          <ClipLoader size={50} />
+        </p>
       ) : isError ? (
         <p>An error has occured.</p>
       ) : !articles.length ? (

@@ -15,11 +15,13 @@ const Tiles = ({ articles }: { articles: TArticle[] }) => {
             className='flex flex-col justify-between border border-t-4 px-3 pt-3 pb-1 shadow-md'
           >
             <div className='flex flex-col'>
-              <img
-                src={urlToImage || PlaceholderImage}
-                alt={title}
-                className='mb-1 h-56 w-full object-cover sm:h-44'
-              />
+              <div className='mb-1 h-56 w-full bg-gray-300 sm:h-44'>
+                <img
+                  src={urlToImage || PlaceholderImage}
+                  alt={title}
+                  className='h-56 w-full object-cover sm:h-44'
+                />
+              </div>
 
               <p className='mb-2 text-sm font-bold text-red-500'>{name}</p>
 
