@@ -12,9 +12,7 @@ const ModalTemplate = ({
         className='absolute inset-0 h-full w-full cursor-default bg-gray-700 opacity-50'
       ></button>
 
-      <div className='max-w-screen z-10 mx-4 w-full bg-white shadow-md sm:w-fit sm:max-w-lg '>
-        {children}
-      </div>
+      <div className='z-10 w-11/12 bg-white shadow-md sm:w-2/3 sm:max-w-4xl'>{children}</div>
     </div>
   );
 };

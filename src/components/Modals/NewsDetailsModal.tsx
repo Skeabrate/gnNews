@@ -15,7 +15,7 @@ const NewsDetailsModal = ({}) => {
 
   return (
     <ModalTemplate toggleModal={() => dispatch(toggleModal())}>
-      <div className='relative flex'>
+      <div className='relative flex max-h-64 overflow-hidden sm:max-h-[calc(100vh-200px)]'>
         <div className='absolute pl-2'>
           <SourceBadge label={source.name} />
         </div>
@@ -38,7 +38,7 @@ const NewsDetailsModal = ({}) => {
         <img
           src={image || PlaceholderImage}
           alt={title}
-          className='h-full w-full object-cover'
+          className='h-full w-full object-contain'
         />
       </div>
 
