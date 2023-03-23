@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 import { useAppDispatch } from '../Redux/hooks';
 import { updateArticlesCount } from '../Redux/slices/articlesCount';
-import { NEWS_API_URL } from '../utils/news-api';
+import { NEWS_API_CATEGORY_URL } from '../utils/news-api';
 import NewsArticles from '../components/NewsArticles';
 
 const indexCountry = {
@@ -14,7 +14,7 @@ const Index = () => {
 
   const { isLoading, isRefetching, isError, data } = useQuery(
     'indexNews',
-    () => fetch(NEWS_API_URL(indexCountry.code)).then((res) => res.json()),
+    () => fetch(NEWS_API_CATEGORY_URL('business', indexCountry.code)).then((res) => res.json()),
     {
       refetchOnWindowFocus: false,
       onSuccess: (data) => {

@@ -20,10 +20,10 @@ const NewsArticles = ({
 
   return (
     <section>
-      <h1 className='mb-6 flex h-12 flex-col items-start justify-start border-l-8 border-brandDarker pl-3 text-left text-xl font-semibold  leading-6'>
+      <h1 className='mb-6 flex h-12 flex-col items-start justify-start border-l-8 border-brandDarker pl-3 text-left text-2xl font-bold leading-6 sm:h-16 sm:text-3xl sm:leading-8'>
         {country ? (
           <>
-            Latest news <span> from {country}</span>
+            Latest news <span className='text-base font-semibold sm:text-xl'> from {country}</span>
           </>
         ) : (
           <>

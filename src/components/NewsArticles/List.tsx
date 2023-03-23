@@ -12,7 +12,9 @@ const List = ({ articles }: { articles: TArticle[] }) => {
           >
             <p className='text-xs font-semibold text-gray-400'>{formatDate(publishedAt)}</p>
 
-            <p className='mb-2 text-sm font-bold text-red-500'>{name}</p>
+            <p className='my-2 w-fit bg-gradient-to-r from-zinc-500 to-zinc-400 px-2 py-1 text-xs font-semibold text-white'>
+              {name}
+            </p>
 
             <h2 className='text-left font-semibold leading-tight'>{title}</h2>
           </button>

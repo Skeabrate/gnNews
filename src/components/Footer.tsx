@@ -25,7 +25,7 @@ const Footer = () => {
       </Link>
       <p className='font-bold'>{getDate()}</p>
       <p>
-        Current articles: <span className='font-bold'>{articlesCount}</span>
+        Available articles: <span className='font-bold'>{articlesCount}</span>
       </p>
     </footer>
   );
