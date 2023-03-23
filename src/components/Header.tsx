@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useAppDispatch } from '../Redux/hooks';
+import { toggleModal } from '../Redux/slices/checkMe';
 import ChangeView from './ChangeView';
 
 const Header = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <header className='border-b border-gray-300 bg-zinc-50 shadow-md '>
       <div className='mx-auto flex max-w-6xl items-center justify-between gap-3 py-4 px-2 sm:py-6 sm:px-4 md:px-6'>
@@ -15,7 +19,10 @@ const Header = () => {
         </Link>
 
         <div className='flex gap-3'>
-          <button className='border border-gray-300 bg-black px-3 text-sm font-bold text-white'>
+          <button
+            onClick={() => dispatch(toggleModal())}
+            className='border border-gray-300 bg-black px-3 text-sm font-bold text-white'
+          >
             Check Me!
           </button>
 

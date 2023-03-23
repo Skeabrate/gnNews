@@ -6,7 +6,8 @@ import { scrollToTopOnPathChange } from '../hooks/useScrollToTopOnPathChange';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import SideMenu from '../components/SideMenu';
-import NewsDetailsModal from '../components/NewsDetailsModal';
+import NewsDetailsModal from '../components/Modals/NewsDetailsModal';
+import CheckMeModal from '../components/Modals/CheckMeModal';
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ export default function Root() {
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
         <NewsDetailsModal />
+        <CheckMeModal />
 
         <Header />
 
