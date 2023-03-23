@@ -15,8 +15,8 @@ const NewsDetailsModal = ({}) => {
 
   return (
     <ModalTemplate toggleModal={() => dispatch(toggleModal())}>
-      <div className='relative flex max-h-64 overflow-hidden sm:max-h-[calc(100vh-200px)]'>
-        <div className='absolute pl-2'>
+      <div className='relative flex max-h-64 items-center overflow-hidden sm:max-h-[calc(100vh-240px)]'>
+        <div className='absolute top-0 pl-2'>
           <SourceBadge label={source.name} />
         </div>
 
@@ -42,7 +42,7 @@ const NewsDetailsModal = ({}) => {
         />
       </div>
 
-      <div className='py-2 px-4 leading-5'>
+      <div className='p-2 leading-5 sm:px-6 sm:py-4 lg:px-8 lg:py-6'>
         <h2 className='font-semibold'>{title}</h2>
 
         <p className='py-2 text-sm text-gray-600'>{content}</p>

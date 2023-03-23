@@ -6,13 +6,15 @@ const ModalTemplate = ({
   toggleModal: () => void;
 }) => {
   return (
-    <div className='fixed inset-0 z-50 flex h-full w-full animate-fadeIn items-center justify-center'>
+    <div className='fixed inset-0 z-50 flex h-full w-full items-center justify-center'>
       <button
         onClick={toggleModal}
-        className='absolute inset-0 h-full w-full cursor-default bg-gray-700 opacity-50'
+        className='absolute inset-0 h-full w-full cursor-default bg-gray-300/50 backdrop-blur-[10px] backdrop-filter'
       ></button>
 
-      <div className='z-10 w-11/12 bg-white shadow-md sm:w-2/3 sm:max-w-4xl'>{children}</div>
+      <div className='z-10 w-11/12 animate-fadeInModal bg-white shadow-md sm:w-5/6 sm:max-w-4xl'>
+        {children}
+      </div>
     </div>
   );
 };
