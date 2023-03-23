@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Root from './routes/root';
-import ErrorPage from './error-page';
-import Index from './routes/index';
-import Country from './routes/country';
 import './index.css';
+import Country from './pages/Country';
+import ErrorPage from './pages/ErrorPage';
+import Home from './pages/Home';
+import Root from './pages/Root';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Index />,
+        element: <Home />,
       },
       {
         path: 'country/:code',
