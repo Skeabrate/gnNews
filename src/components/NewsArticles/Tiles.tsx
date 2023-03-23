@@ -18,7 +18,7 @@ const Tiles = ({ articles }: { articles: TArticle[] }) => {
           <div className='flex flex-col'>
             <div className='h-56 w-full bg-gray-300 lg:h-80'>
               <img
-                src={article.urlToImage || PlaceholderImage}
+                src={article.image || PlaceholderImage}
                 alt={article.title}
                 className='h-full w-full object-cover'
               />

@@ -1,15 +1,15 @@
 export type TArticle = {
-  author: string;
-  content?: null | string;
+  author?: string | null;
+  content?: string | null;
   description?: null | string;
   publishedAt: string;
   source: TSource;
   title: string;
   url: string;
-  urlToImage?: null | string;
+  image?: null | string;
 };
 
 export type TSource = {
-  id: string;
+  url: string | null;
   name: string;
 };

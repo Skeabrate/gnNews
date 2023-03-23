@@ -9,7 +9,7 @@ const ModalTemplate = ({
     <div className='fixed inset-0 z-50 flex h-full w-full animate-fadeIn items-center justify-center'>
       <button
         onClick={toggleModal}
-        className='absolute inset-0 h-full w-full cursor-default bg-gray-600 opacity-30'
+        className='absolute inset-0 h-full w-full cursor-default bg-gray-700 opacity-50'
       ></button>
 
       <div className='max-w-screen z-10 mx-4 w-full bg-white shadow-md sm:w-fit sm:max-w-lg '>

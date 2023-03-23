@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useAppDispatch } from '../Redux/hooks';
 import { updateArticlesCount } from '../Redux/slices/articlesCount';
 import { COUNTRIES } from '../utils/countries';
-import { NEWS_API_URL } from '../utils/news-api';
+import { GNEWS_API_URL } from '../utils/news-api';
 import NewsArticles from '../components/NewsArticles';
 
 const Country = () => {
@@ -12,7 +12,7 @@ const Country = () => {
 
   const { isLoading, isError, data, isRefetching } = useQuery(
     ['news', code],
-    () => fetch(NEWS_API_URL(code)).then((res) => res.json()),
+    () => fetch(GNEWS_API_URL(code)).then((res) => res.json()),
     {
       refetchOnWindowFocus: false,
       onSuccess: (data) => {

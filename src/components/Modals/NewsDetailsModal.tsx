@@ -11,7 +11,7 @@ const NewsDetailsModal = ({}) => {
 
   if (!modalState.isOpen || !modalState.news) return null;
 
-  const { author, publishedAt, source, url, title, content, urlToImage } = modalState.news;
+  const { author, publishedAt, source, url, title, content, image } = modalState.news;
 
   return (
     <ModalTemplate toggleModal={() => dispatch(toggleModal())}>
@@ -36,13 +36,13 @@ const NewsDetailsModal = ({}) => {
         </button>
 
         <img
-          src={urlToImage || PlaceholderImage}
+          src={image || PlaceholderImage}
           alt={title}
           className='h-full w-full object-cover'
         />
       </div>
 
-      <div className='p-2 leading-5'>
+      <div className='py-2 px-4 leading-5'>
         <h2 className='font-semibold'>{title}</h2>
 
         <p className='py-2 text-sm text-gray-600'>{content}</p>
