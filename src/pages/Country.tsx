@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useAppDispatch } from '../Redux/hooks';
 import { updateArticlesCount } from '../Redux/slices/articlesCount';
 import { COUNTRIES } from '../utils/countries';
-import { GNEWS_API_URL } from '../utils/news-api';
+import { GNEWS_API_URL, NEWS_API_URL } from '../utils/news-api';
 import NewsArticles from '../components/NewsArticles';
 
 const Country = () => {

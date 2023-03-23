@@ -14,7 +14,7 @@ const SideMenu = () => {
         onClick={toggleMenu}
         className='absolute right-3 mt-1 bg-brandDarker px-4 py-2 text-xs font-bold leading-3 text-white sm:hidden'
       >
-        Chose <br />
+        Choose <br />
         Country
       </button>
 
