@@ -16,7 +16,7 @@ export default function Root() {
   return (
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
-        {/* <NewsDetailsModal /> */}
+        <NewsDetailsModal />
 
         <Header />
 

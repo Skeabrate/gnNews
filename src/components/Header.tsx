@@ -4,7 +4,7 @@ import ChangeView from './ChangeView';
 const Header = () => {
   return (
     <header className='border-b border-gray-300 bg-zinc-50 shadow-md '>
-      <div className='mx-auto flex max-w-7xl items-center justify-between gap-3 py-4 px-2 sm:py-6 sm:px-4 md:px-6'>
+      <div className='mx-auto flex max-w-6xl items-center justify-between gap-3 py-4 px-2 sm:py-6 sm:px-4 md:px-6'>
         <Link
           to='/'
           className='text-3xl font-bold'
