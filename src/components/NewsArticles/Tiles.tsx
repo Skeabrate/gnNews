@@ -13,10 +13,10 @@ const Tiles = ({ articles }: { articles: TArticle[] }) => {
       {articles.map((article, idx) => (
         <article
           key={idx}
-          className='flex flex-col justify-between border border-t-4 px-3 pt-3 pb-1 shadow-md lg:[&:nth-child(5n+1)]:col-span-2 lg:[&:nth-child(5n+6)]:mt-12'
+          className='big-tile flex flex-col justify-between border border-t-4 px-3 pt-3 pb-1 shadow-md lg:[&:nth-child(5n+1)]:col-span-2 lg:[&:nth-child(5n+6)]:mt-12'
         >
           <div className='flex flex-col'>
-            <div className='h-56 w-full bg-gray-300 lg:h-80'>
+            <div className='h-56 w-full bg-gray-300'>
               <img
                 src={article.image || PlaceholderImage}
                 alt={article.title}
