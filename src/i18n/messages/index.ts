@@ -1,5 +1,5 @@
-import { pl } from './pl-pl';
 import { en } from './en-us';
+import { fr } from './fr-fr';
 import { de } from './de-de';
 
 export type TTranslateValues = {
@@ -24,7 +24,7 @@ export type TLanguage = {
 };
 
 export default {
-  ...pl,
   ...en,
   ...de,
+  ...fr,
 };

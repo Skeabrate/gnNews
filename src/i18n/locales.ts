@@ -1,5 +1,5 @@
 export const LOCALES = {
   ENGLISH: 'en-us',
-  POLISH: 'pl-pl',
+  FRENCH: 'fr-fr',
   GERMAN: 'de-de',
 };

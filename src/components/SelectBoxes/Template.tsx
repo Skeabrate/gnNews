@@ -6,12 +6,14 @@ type TSelectItem = { id: string; label: React.ReactNode | string };
 
 const Template = ({
   items,
+  initialItem,
   onChange,
 }: {
   items: TSelectItem[];
+  initialItem?: TSelectItem;
   onChange: (selectedItem: TSelectItem['id']) => void;
 }) => {
-  const [selectedItem, setSelectedItem] = useState(items[0]);
+  const [selectedItem, setSelectedItem] = useState(initialItem || items[0]);
   const { isOpen, getToggleButtonProps, getMenuProps, highlightedIndex, getItemProps } = useSelect({
     items,
     itemToString: (item) => item.id,
@@ -26,7 +28,7 @@ const Template = ({
 
   return (
     <div>
-      <div className='flex h-full w-28 flex-col justify-center gap-1 border border-gray-400'>
+      <div className='flex h-full min-w-[100px] flex-col justify-center gap-1 border border-gray-400'>
         <div
           className='flex cursor-pointer justify-between bg-white py-1 px-2'
           {...getToggleButtonProps()}
