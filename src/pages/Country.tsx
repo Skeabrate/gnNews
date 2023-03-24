@@ -1,25 +1,31 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { useAppDispatch } from '../Redux/hooks';
-import { updateArticlesCount } from '../Redux/slices/articlesCount';
 import { COUNTRIES } from '../utils/countries';
-import { GNEWS_API_URL, NEWS_API_URL } from '../utils/news-api';
+import { GNEWS_API_URL } from '../utils/news-api';
+import { useArticlesLength } from '../hooks/useArticlesLength';
 import NewsArticles from '../components/NewsArticles';
+
+const getCountry = (code: string) => fetch(GNEWS_API_URL(code)).then((res) => res.json());
+
+const countryNewsQuery = (code: string) => ({
+  queryKey: ['country', code],
+  queryFn: async () => getCountry(code),
+  staleTime: 1000 * 60 * 2,
+  refetchOnWindowFocus: false,
+});
+
+export const loader =
+  (queryClient) =>
+  async ({ params }) => {
+    const query = countryNewsQuery(params.contactId);
+    return queryClient.getQueryData(query.queryKey) ?? (await queryClient.fetchQuery(query));
+  };
 
 const Country = () => {
   const { code } = useParams();
-  const dispatch = useAppDispatch();
+  const { data, isLoading, isRefetching, isError } = useQuery(countryNewsQuery(code));
 
-  const { isLoading, isError, data, isRefetching } = useQuery(
-    ['news', code],
-    () => fetch(GNEWS_API_URL(code)).then((res) => res.json()),
-    {
-      refetchOnWindowFocus: false,
-      onSuccess: (data) => {
-        dispatch(updateArticlesCount(data?.articles?.length));
-      },
-    }
-  );
+  useArticlesLength(data?.totalResults);
 
   const getFullCountryName = (code: string | undefined) =>
     COUNTRIES.find((country) => country.code === code)?.name;

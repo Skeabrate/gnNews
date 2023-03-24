@@ -1,7 +1,6 @@
 import { useQuery } from 'react-query';
-import { useAppDispatch } from '../Redux/hooks';
-import { updateArticlesCount } from '../Redux/slices/articlesCount';
-import { GNEWS_API_URL, NEWS_API_URL } from '../utils/news-api';
+import { GNEWS_API_URL } from '../utils/news-api';
+import { useArticlesLength } from '../hooks/useArticlesLength';
 import NewsArticles from '../components/NewsArticles';
 
 const mainCountry = {
@@ -9,19 +8,24 @@ const mainCountry = {
   name: 'United States',
 };
 
-const Home = () => {
-  const dispatch = useAppDispatch();
+const getMainNews = (code: string) => fetch(GNEWS_API_URL(code)).then((res) => res.json());
 
-  const { isLoading, isRefetching, isError, data } = useQuery(
-    'mainNews',
-    () => fetch(GNEWS_API_URL(mainCountry.code)).then((res) => res.json()),
-    {
-      refetchOnWindowFocus: false,
-      onSuccess: (data) => {
-        dispatch(updateArticlesCount(data?.articles?.length));
-      },
-    }
-  );
+const mainNewsQuery = () => ({
+  queryKey: 'homeNews',
+  queryFn: async () => getMainNews(mainCountry.code),
+  staleTime: 1000 * 60 * 2,
+  refetchOnWindowFocus: false,
+});
+
+export const loader = (queryClient) => async () => {
+  const query = mainNewsQuery();
+  return queryClient.getQueryData(query.queryKey) ?? (await queryClient.fetchQuery(query));
+};
+
+const Home = () => {
+  const { isLoading, isRefetching, isError, data } = useQuery(mainNewsQuery());
+
+  useArticlesLength(data?.totalResults);
 
   return (
     <NewsArticles
