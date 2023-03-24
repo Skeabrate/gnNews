@@ -9,7 +9,7 @@ export const de: TLanguage = {
     readMore: 'WEITERLESEN',
     newsLabel1: 'Aktuelle Nachrichten',
     newsLabel2: 'aus',
-    yourCountry: 'Ihrem Land',
+    aroundTheWorld: 'der ganzen Welt',
     footer: 'Verfügbare Artikel:',
     checkMe: 'Überprüfen!',
     error: 'Ein Fehler ist aufgetreten.',

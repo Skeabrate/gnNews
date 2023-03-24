@@ -9,7 +9,7 @@ export type TTranslateValues = {
   readMore: string;
   newsLabel1: string;
   newsLabel2: string;
-  yourCountry: string;
+  aroundTheWorld: string;
   footer: string;
   checkMe: string;
   error: string;

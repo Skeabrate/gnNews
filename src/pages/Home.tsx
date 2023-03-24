@@ -1,25 +1,20 @@
 import { useQuery } from 'react-query';
 import { useAppSelector } from '../Redux/hooks';
 import { GNEWS_API_URL } from '../utils/news-api';
-import { getCountryCode } from '../utils/getCountryCode';
 import { useArticlesLength } from '../hooks/useArticlesLength';
-import translate from '../i18n/translate';
 import NewsArticles from '../components/NewsArticles';
+import translate from '../i18n/translate';
 
-const getMainNews = (code: string, lang: string) => {
-  return fetch(GNEWS_API_URL({ code, lang })).then((res) => res.json());
+const getMainNews = (lang: string) => {
+  return fetch(GNEWS_API_URL({ lang })).then((res) => res.json());
 };
 
-const mainNewsQuery = (lang: string) => {
-  const currentCountry = getCountryCode(navigator.language).toLowerCase();
-
-  return {
-    queryKey: ['homeNews', lang],
-    queryFn: async () => getMainNews(currentCountry, lang),
-    staleTime: 1000 * 60 * 5,
-    refetchOnWindowFocus: false,
-  };
-};
+const mainNewsQuery = (lang: string) => ({
+  queryKey: ['homeNews', lang],
+  queryFn: async () => getMainNews(lang),
+  staleTime: 1000 * 60 * 5,
+  refetchOnWindowFocus: false,
+});
 
 export const loader =
   (queryClient, lang = 'en') =>
@@ -39,7 +34,7 @@ const Home = () => {
   return (
     <NewsArticles
       articles={data?.articles}
-      country={translate('yourCountry')}
+      country={translate('aroundTheWorld')}
       isLoading={isLoading || isRefetching}
       isError={isError}
     />

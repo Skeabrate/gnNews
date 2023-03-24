@@ -9,7 +9,7 @@ export const en: TLanguage = {
     readMore: 'READ MORE',
     newsLabel1: 'Latest news',
     newsLabel2: 'from',
-    yourCountry: 'your country',
+    aroundTheWorld: 'around the world',
     footer: 'Available articles:',
     checkMe: 'Check Me!',
     error: 'An error has occured.',
