@@ -1,13 +1,13 @@
 import translate from '../i18n/translate';
 
 export type TNewsView = {
-  value: string;
+  id: string;
   label: JSX.Element;
 };
 
 export const NEWS_VIEWS = [
   {
-    value: 'tiles',
+    id: 'tiles',
     label: (
       <>
         <svg
@@ -30,7 +30,7 @@ export const NEWS_VIEWS = [
     ),
   },
   {
-    value: 'list',
+    id: 'list',
     label: (
       <>
         <svg

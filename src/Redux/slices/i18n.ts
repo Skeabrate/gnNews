@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { LOCALES } from '../../i18n/locales';
 
-const initialState = window.localStorage.getItem('lang') || LOCALES.POLISH;
+const initialState = window.localStorage.getItem('lang') || LOCALES.ENGLISH;
 
 export const i18nSlice = createSlice({
   name: 'i18n',

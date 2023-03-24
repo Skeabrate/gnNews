@@ -44,8 +44,8 @@ const NewsArticles = ({
         <p>{translate('noNewsFound')}</p>
       ) : (
         <>
-          {viewType === NEWS_VIEWS[0].value && <Tiles articles={articles} />}
-          {viewType === NEWS_VIEWS[1].value && <List articles={articles} />}
+          {viewType === NEWS_VIEWS[0].id && <Tiles articles={articles} />}
+          {viewType === NEWS_VIEWS[1].id && <List articles={articles} />}
         </>
       )}
     </section>

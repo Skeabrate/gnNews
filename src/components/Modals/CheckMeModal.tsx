@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import { toggleModal } from '../../Redux/slices/checkMe';
-import ModalTemplate from './ModalTemplate';
+import Template from './Template';
 
 const CheckMeModal = () => {
   const isOpen = useAppSelector((state) => state.checkMe);
@@ -9,9 +9,9 @@ const CheckMeModal = () => {
   if (!isOpen) return null;
 
   return (
-    <ModalTemplate toggleModal={() => dispatch(toggleModal())}>
+    <Template toggleModal={() => dispatch(toggleModal())}>
       <div className='p-4'>Największą trudność sprawiło mi:</div>
-    </ModalTemplate>
+    </Template>
   );
 };
 

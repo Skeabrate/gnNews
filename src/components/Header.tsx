@@ -1,15 +1,12 @@
 import { Link } from 'react-router-dom';
-import { LOCALES } from '../i18n/locales';
 import translate from '../i18n/translate';
 import { useAppDispatch } from '../Redux/hooks';
 import { toggleModal } from '../Redux/slices/checkMe';
-import { changeLanguage } from '../Redux/slices/i18n';
-import ChangeView from './ChangeView';
+import LanguageSelectBox from './SelectBoxes/LanguageSelectBox';
+import ViewSelectBox from './SelectBoxes/ViewSelectBox';
 
 const Header = () => {
   const dispatch = useAppDispatch();
-
-  const handleChangeLanguage = (code: string) => dispatch(changeLanguage(code));
 
   return (
     <header className='border-b border-gray-300 bg-zinc-50 shadow-md '>
@@ -24,20 +21,6 @@ const Header = () => {
         </Link>
 
         <div className='flex gap-3'>
-          <button className='border border-gray-300 bg-black px-3 text-sm font-bold text-white'>
-            Theme
-          </button>
-
-          {Object.values(LOCALES).map((country) => (
-            <button
-              key={country}
-              className='border border-gray-300 bg-black px-3 text-sm font-bold text-white'
-              onClick={() => handleChangeLanguage(country)}
-            >
-              {country}
-            </button>
-          ))}
-
           <button
             onClick={() => dispatch(toggleModal())}
             className='border border-gray-300 bg-black px-3 text-sm font-bold text-white'
@@ -45,7 +28,13 @@ const Header = () => {
             {translate('checkMe')}
           </button>
 
-          <ChangeView />
+          <button className='border border-gray-300 bg-black px-3 text-sm font-bold text-white'>
+            Theme
+          </button>
+
+          <LanguageSelectBox />
+
+          <ViewSelectBox />
         </div>
       </div>
     </header>

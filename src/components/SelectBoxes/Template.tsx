@@ -1,35 +1,40 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useSelect } from 'downshift';
 import cx from 'classnames';
-import { NEWS_VIEWS, TNewsView } from '../utils/newsViews';
-import { useAppDispatch } from '../Redux/hooks';
-import { changeActiveView } from '../Redux/slices/activeView';
 
-const ChangeView = () => {
-  const dispatch = useAppDispatch();
+type TSelectItem = { id: string; label: React.ReactNode | string };
 
-  const [selectedItem, setSelectedItem] = useState<TNewsView>(NEWS_VIEWS[0]);
+const Template = ({
+  items,
+  onChange,
+}: {
+  items: TSelectItem[];
+  onChange: (selectedItem: TSelectItem['id']) => void;
+}) => {
+  const [selectedItem, setSelectedItem] = useState(items[0]);
   const { isOpen, getToggleButtonProps, getMenuProps, highlightedIndex, getItemProps } = useSelect({
-    items: NEWS_VIEWS,
-    itemToString: (item) => item?.value || '',
+    items,
+    itemToString: (item) => item.id,
     selectedItem,
     onSelectedItemChange: ({ selectedItem: newSelectedItem }) => {
       if (newSelectedItem) {
         setSelectedItem(newSelectedItem);
-        dispatch(changeActiveView(newSelectedItem.value));
+        onChange(newSelectedItem.id);
       }
     },
   });
 
   return (
     <div>
-      <div className='flex w-28 flex-col gap-1 border border-gray-300'>
+      <div className='flex h-full w-28 flex-col justify-center gap-1 border border-gray-400'>
         <div
-          className='flex cursor-pointer justify-between bg-white p-2'
+          className='flex cursor-pointer justify-between bg-white py-1 px-2'
           {...getToggleButtonProps()}
         >
           <div className='flex items-center gap-2'>{selectedItem.label}</div>
-          <span className='px-2'>{isOpen ? <>&#8593;</> : <>&#8595;</>}</span>
+          <span className='flex items-center justify-center px-2'>
+            {isOpen ? <>&#8593;</> : <>&#8595;</>}
+          </span>
         </div>
       </div>
       <ul
@@ -37,14 +42,14 @@ const ChangeView = () => {
         {...getMenuProps()}
       >
         {isOpen &&
-          NEWS_VIEWS.map((item, index) => (
+          items.map((item, index) => (
             <li
               className={cx(
                 highlightedIndex === index && 'bg-blue-200',
                 selectedItem === item && 'font-bold',
-                'flex cursor-pointer py-2 px-3 shadow-sm'
+                'flex cursor-pointer py-2 px-2 shadow-sm'
               )}
-              key={`${item.value}${index}`}
+              key={`${item.id}${index}`}
               {...getItemProps({ item, index })}
             >
               <div className='flex items-center gap-2'>{item.label}</div>
@@ -55,4 +60,4 @@ const ChangeView = () => {
   );
 };
 
-export default ChangeView;
+export default Template;

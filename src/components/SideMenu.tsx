@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
-import translate from '../i18n/translate';
 import { COUNTRIES } from '../utils/countries';
+import translate from '../i18n/translate';
+import Flag from './Flag';
 
 const SideMenu = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -51,12 +52,7 @@ const SideMenu = () => {
                 to={`/country/${code.toLowerCase()}`}
                 onClick={toggleMenu}
               >
-                <img
-                  src={`https://flagsapi.com/${code}/flat/32.png`}
-                  alt={name}
-                  height='32'
-                  width='32'
-                />
+                <Flag code={code} />
                 {name}
               </Link>
             </li>
