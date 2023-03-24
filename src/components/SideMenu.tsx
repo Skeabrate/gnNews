@@ -54,6 +54,8 @@ const SideMenu = () => {
                 <img
                   src={`https://flagsapi.com/${code}/flat/32.png`}
                   alt={name}
+                  height='32'
+                  width='32'
                 />
                 {name}
               </Link>
