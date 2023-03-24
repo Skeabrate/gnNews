@@ -2,17 +2,13 @@ import { useQuery } from 'react-query';
 import { GNEWS_API_URL } from '../utils/news-api';
 import { useArticlesLength } from '../hooks/useArticlesLength';
 import NewsArticles from '../components/NewsArticles';
-
-const mainCountry = {
-  code: 'US',
-  name: 'United States',
-};
+import translate from '../i18n/translate';
 
 const getMainNews = (code: string) => fetch(GNEWS_API_URL(code)).then((res) => res.json());
 
 const mainNewsQuery = () => ({
   queryKey: 'homeNews',
-  queryFn: async () => getMainNews(mainCountry.code),
+  queryFn: async () => getMainNews(navigator.language.split('-')[1].toLowerCase()),
   staleTime: 1000 * 60 * 2,
   refetchOnWindowFocus: false,
 });
@@ -30,7 +26,7 @@ const Home = () => {
   return (
     <NewsArticles
       articles={data?.articles}
-      country={mainCountry.name}
+      country={translate('yourCountry')}
       isLoading={isLoading || isRefetching}
       isError={isError}
     />

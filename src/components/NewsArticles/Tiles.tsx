@@ -2,6 +2,7 @@ import { TArticle } from '../../types/article';
 import { formatDate } from '../../utils/formatDate';
 import { useAppDispatch } from '../../Redux/hooks';
 import { toggleModal, setDetails } from '../../Redux/slices/newsDetails';
+import translate from '../../i18n/translate';
 import PlaceholderImage from '../../assets/placeholder-image.jpg';
 import SourceBadge from '../SourceBadge';
 
@@ -39,7 +40,7 @@ const Tiles = ({ articles }: { articles: TArticle[] }) => {
               }}
               className='mx-auto mt-2 w-fit border border-gray-600 px-8 py-2 text-xs text-gray-600 transition-shadow hover:shadow-md'
             >
-              READ MORE
+              {translate('readMore')}
             </button>
 
             <p className='text-center text-xs font-semibold text-gray-400 '>

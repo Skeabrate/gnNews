@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../Redux/hooks';
+import translate from '../i18n/translate';
 
 const Footer = () => {
   const articlesCount = useAppSelector((state) => state.articlesCount);
@@ -26,7 +27,7 @@ const Footer = () => {
         </Link>
         <p className='font-bold'>{getDate()}</p>
         <p>
-          Available articles: <span className='font-bold'>{articlesCount}</span>
+          {translate('footer')} <span className='font-bold'>{articlesCount}</span>
         </p>
       </div>
 

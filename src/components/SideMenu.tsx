@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
+import translate from '../i18n/translate';
 import { COUNTRIES } from '../utils/countries';
 
 const SideMenu = () => {
@@ -12,10 +13,9 @@ const SideMenu = () => {
     <>
       <button
         onClick={toggleMenu}
-        className='absolute right-3 mt-1 bg-brandDarker px-4 py-2 text-xs font-bold leading-3 text-white sm:hidden'
+        className='absolute right-3 mt-1 w-20 bg-brandDarker px-4 py-2 text-xs font-bold leading-3 text-white sm:hidden'
       >
-        Choose <br />
-        Country
+        {translate('sideMenuLabel')}
       </button>
 
       <nav
@@ -25,7 +25,7 @@ const SideMenu = () => {
         )}
       >
         <div className='relative flex h-16 w-full bg-gradient-to-r from-brandDarker to-brand font-bold leading-none text-white sm:cursor-default'>
-          <p className='flex w-full items-center justify-center'>Chose Country:</p>
+          <p className='flex w-full items-center justify-center'>{translate('sideMenuLabel')}</p>
 
           <button
             onClick={toggleMenu}

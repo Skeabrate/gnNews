@@ -1,6 +1,7 @@
 import { useAppSelector } from '../../Redux/hooks';
 import { TArticle } from '../../types/article';
 import { NEWS_VIEWS } from '../../utils/newsViews';
+import translate from '../../i18n/translate';
 import ClipLoader from 'react-spinners/ClipLoader';
 import List from './List';
 import Tiles from './Tiles';
@@ -12,7 +13,7 @@ const NewsArticles = ({
   isError,
 }: {
   articles: TArticle[];
-  country: string | undefined;
+  country: React.ReactNode | undefined;
   isLoading: boolean;
   isError: boolean;
 }) => {
@@ -23,12 +24,13 @@ const NewsArticles = ({
       <h1 className='mb-6 flex h-12 flex-col items-start justify-start border-l-8 border-brandDarker pl-3 text-left text-2xl font-bold leading-6 sm:h-16 sm:text-3xl sm:leading-8'>
         {country ? (
           <>
-            Latest news <span className='text-base font-semibold sm:text-xl'> from {country}</span>
+            {translate('newsLabel1')}
+            <span className='text-base font-semibold sm:text-xl'>
+              {translate('newsLabel2')} {country}
+            </span>
           </>
         ) : (
-          <>
-            Country <span> not found</span>
-          </>
+          translate('noCountryFound')
         )}
       </h1>
 
@@ -37,9 +39,9 @@ const NewsArticles = ({
           <ClipLoader size={50} />
         </p>
       ) : isError ? (
-        <p>An error has occured.</p>
+        <p>{translate('error')}</p>
       ) : !articles.length ? (
-        <p>No news found</p>
+        <p>{translate('noNewsFound')}</p>
       ) : (
         <>
           {viewType === NEWS_VIEWS[0].value && <Tiles articles={articles} />}

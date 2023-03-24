@@ -28,7 +28,7 @@ const ChangeView = () => {
           className='flex cursor-pointer justify-between bg-white p-2'
           {...getToggleButtonProps()}
         >
-          <div className='grid grid-cols-2 items-center'>{selectedItem.label}</div>
+          <div className='flex items-center gap-2'>{selectedItem.label}</div>
           <span className='px-2'>{isOpen ? <>&#8593;</> : <>&#8595;</>}</span>
         </div>
       </div>
@@ -47,7 +47,7 @@ const ChangeView = () => {
               key={`${item.value}${index}`}
               {...getItemProps({ item, index })}
             >
-              <div className='grid grid-cols-2 items-center'>{item.label}</div>
+              <div className='flex items-center gap-2'>{item.label}</div>
             </li>
           ))}
       </ul>

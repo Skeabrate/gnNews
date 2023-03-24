@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import { toggleModal } from '../../Redux/slices/newsDetails';
 import { formatDate } from '../../utils/formatDate';
+import translate from '../../i18n/translate';
 import PlaceholderImage from '../../assets/placeholder-image.jpg';
 import SourceBadge from '../SourceBadge';
 import ModalTemplate from './ModalTemplate';
@@ -48,7 +49,7 @@ const NewsDetailsModal = ({}) => {
         <p className='py-2 text-sm text-gray-600'>{content}</p>
 
         <p className='text-xs italic text-cyan-800'>
-          <span className='font-bold'>Source:</span>
+          <span className='font-bold'>{translate('source')}</span>
           {url ? (
             <a
               className='ml-1 break-words underline'
@@ -64,7 +65,7 @@ const NewsDetailsModal = ({}) => {
         </p>
 
         <p className='text-xs italic text-cyan-800'>
-          <span className='font-bold'>Author:</span> {author || 'unknown'}
+          <span className='font-bold'>{translate('author')}</span> {author || 'unknown'}
         </p>
 
         <p className='text-center text-xs font-semibold text-gray-400 '>
