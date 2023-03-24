@@ -20,7 +20,7 @@ const SideMenu = () => {
 
       <nav
         className={cx(
-          'fixed right-0 top-0 z-30 h-full w-full -translate-x-full overflow-y-auto bg-white transition-transform duration-500 sm:static sm:mr-4 sm:w-fit sm:translate-x-0 sm:overflow-clip sm:pb-4',
+          'fixed right-0 top-0 z-40 h-full w-full -translate-x-full overflow-y-auto bg-white transition-transform duration-500 sm:static sm:mr-4 sm:w-fit sm:translate-x-0 sm:overflow-clip sm:pb-4',
           isMenuActive && 'translate-x-0'
         )}
       >

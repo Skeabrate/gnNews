@@ -29,9 +29,9 @@ module.exports = {
       animation: {
         fadeIn: 'fadeIn 0.4s forwards',
         fadeInModal: 'fadeIn 0.2s forwards',
-        moveWaveFirst: 'moveWave 10s -3s linear infinite',
-        moveWaveSecond: 'moveWave 25s linear infinite',
-        moveWaveThird: 'moveWave 50s -1s linear infinite',
+        moveWaveFirst: 'moveWave 10s -3s linear infinite alternate',
+        moveWaveSecond: 'moveWave 20s linear infinite alternate',
+        moveWaveThird: 'moveWave 50s -1s linear infinite alternate',
       },
     },
   },
