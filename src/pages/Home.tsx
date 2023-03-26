@@ -29,7 +29,7 @@ const Home = () => {
 
   const { isLoading, isRefetching, isError, data } = useQuery(mainNewsQuery(getLanguage));
 
-  useArticlesLength(data?.totalResults);
+  useArticlesLength(data?.articles?.length);
 
   return (
     <NewsArticles

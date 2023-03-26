@@ -33,7 +33,7 @@ const Country = () => {
     countryNewsQuery(code, languageToFetch)
   );
 
-  useArticlesLength(data?.totalResults);
+  useArticlesLength(data?.articles?.length);
 
   const getFullCountryName = (code: string | undefined) =>
     COUNTRIES.find((country) => country.code === code)?.name;
