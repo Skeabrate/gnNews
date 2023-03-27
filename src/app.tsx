@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { scrollToTopOnPathChange } from './hooks/useScrollToTopOnPathChange';
+import { useScrollToTopOnPathChange } from './hooks/useScrollToTopOnPathChange';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import SideMenu from './components/SideMenu';
@@ -7,10 +7,10 @@ import NewsDetailsModal from './components/Modals/NewsDetailsModal';
 import CheckMeModal from './components/Modals/CheckMeModal';
 
 export default function App() {
-  scrollToTopOnPathChange();
+  useScrollToTopOnPathChange();
 
   return (
-    <>
+    <div className='dark:bg-zinc-800 dark:text-white'>
       <NewsDetailsModal />
       <CheckMeModal />
 
@@ -25,6 +25,6 @@ export default function App() {
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 }

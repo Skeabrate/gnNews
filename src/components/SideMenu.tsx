@@ -21,7 +21,7 @@ const SideMenu = () => {
 
       <nav
         className={cx(
-          'fixed right-0 top-0 z-40 h-full w-full -translate-x-full overflow-y-auto bg-white transition-transform duration-500 sm:static sm:mr-4 sm:w-fit sm:translate-x-0 sm:overflow-clip sm:pb-4',
+          'fixed right-0 top-0 z-40 h-full w-full -translate-x-full overflow-y-auto bg-white dark:bg-zinc-800 transition-transform duration-500 sm:static sm:mr-4 sm:w-fit sm:translate-x-0 sm:overflow-clip sm:pb-4',
           isMenuActive && 'translate-x-0'
         )}
       >
@@ -46,10 +46,13 @@ const SideMenu = () => {
         </div>
 
         <ul className='custom-scrollbar flex flex-col gap-1 px-3 sm:sticky sm:top-0 sm:h-screen sm:overflow-y-auto sm:pr-4 sm:pl-0'>
-          {COUNTRIES.map(({ code, name }) => (
+          {COUNTRIES.map(({ code, name }, idx) => (
             <li key={code}>
               <Link
-                className='flex items-center gap-3 border-t border-gray-200 px-2 py-2 text-sm transition-colors duration-75 hover:bg-gray-200'
+                className={cx(
+                  'flex items-center gap-3 border-t border-gray-200 dark:border-gray-300 px-2 py-2 text-sm transition-colors duration-75 hover:bg-gray-200 dark:hover:bg-zinc-900',
+                  !idx && 'border-t-0'
+                )}
                 to={`/country/${code.toLowerCase()}`}
                 onClick={toggleMenu}
               >

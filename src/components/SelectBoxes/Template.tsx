@@ -28,28 +28,31 @@ const Template = ({
 
   return (
     <div>
-      <div className='flex h-10 min-w-[100px] flex-col justify-center gap-1 border border-gray-400'>
+      <div className='relative flex h-12 min-w-[100px] flex-col justify-center gap-1 border border-gray-300'>
         <div
-          className='flex cursor-pointer justify-between bg-white px-2'
+          className='flex cursor-pointer justify-between h-full'
           {...getToggleButtonProps()}
         >
-          <div className='flex items-center gap-2'>{selectedItem.label}</div>
+          <div className='flex items-center gap-2 px-2 md:px-3'>{selectedItem.label}</div>
           <span className='flex items-center justify-center px-2'>
             {isOpen ? <>&#8593;</> : <>&#8595;</>}
           </span>
         </div>
       </div>
       <ul
-        className={`absolute z-10 mt-1 w-28 bg-white p-0 shadow-md border${!isOpen && 'hidden'}`}
+        className={cx(
+          'absolute z-10 mt-2 w-32 bg-white dark:bg-zinc-900 p-0 shadow-md border border-gray-300',
+          !isOpen && 'hidden'
+        )}
         {...getMenuProps()}
       >
         {isOpen &&
           items.map((item, index) => (
             <li
               className={cx(
-                highlightedIndex === index && 'bg-blue-200',
+                highlightedIndex === index && 'bg-blue-200 dark:bg-black',
                 selectedItem === item && 'font-bold',
-                'flex cursor-pointer py-2 px-2 shadow-sm'
+                'flex cursor-pointer h-12 px-2 shadow-sm'
               )}
               key={`${item.id}${index}`}
               {...getItemProps({ item, index })}

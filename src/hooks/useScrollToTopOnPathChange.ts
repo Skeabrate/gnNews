@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 
-export const scrollToTopOnPathChange = () => {
+export const useScrollToTopOnPathChange = () => {
   const location = useLocation();
 
   useEffect(() => {

@@ -5,11 +5,10 @@ import translate from '../i18n/translate';
 
 const Footer = () => {
   const articlesCount = useAppSelector((state) => state.articlesCount);
-
   const getDate = () => new Date();
 
   return (
-    <footer className='relative bg-zinc-900 pb-6 text-center text-white'>
+    <footer className='relative bg-zinc-900 dark:bg-black pb-6 text-center text-white'>
       <div className='relative z-30'>
         <Link to='/'>
           <h2 className='mx-auto w-fit py-10 text-4xl font-bold transition-transform hover:scale-105'>

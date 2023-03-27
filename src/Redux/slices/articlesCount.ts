@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-const initialState: number = 0;
+const initialState = 0;
 
 export const articlesCountSlice = createSlice({
   name: 'articlesCount',

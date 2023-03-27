@@ -6,6 +6,6 @@ export const useArticlesLength = (dataLength?: number) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (dataLength) dispatch(updateArticlesCount(dataLength));
-  }, [dataLength]);
+    if (dataLength >= 0) dispatch(updateArticlesCount(dataLength));
+  }, [dataLength, dispatch]);
 };

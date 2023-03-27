@@ -17,7 +17,7 @@ const Tiles = ({ articles }: { articles: TArticle[] }) => {
           className='big-tile flex flex-col justify-between border border-t-4 px-3 pt-3 pb-1 shadow-md lg:[&:nth-child(5n+1)]:col-span-2 lg:[&:nth-child(5n+6)]:mt-12'
         >
           <div className='flex flex-col'>
-            <div className='h-56 w-full bg-gray-300'>
+            <div className='h-56 w-full bg-gray-300 dark:bg-zinc-900'>
               <img
                 src={article.image || PlaceholderImage}
                 alt={article.title}
@@ -29,7 +29,9 @@ const Tiles = ({ articles }: { articles: TArticle[] }) => {
 
             <h2 className='mb-2 font-bold leading-tight'>{article.title}</h2>
 
-            <p className='overflow-hidden text-sm text-gray-500'>{article.description}</p>
+            <p className='overflow-hidden text-sm text-gray-500 dark:text-zinc-300'>
+              {article.description}
+            </p>
           </div>
 
           <div className='flex flex-col gap-4 pt-5'>
@@ -38,12 +40,12 @@ const Tiles = ({ articles }: { articles: TArticle[] }) => {
                 dispatch(toggleModal());
                 dispatch(setDetails(article));
               }}
-              className='mx-auto mt-2 w-fit border border-gray-600 px-8 py-2 text-xs text-gray-600 transition-shadow hover:shadow-md'
+              className='mx-auto mt-2 w-fit border border-gray-600 dark:border-zinc-300 px-8 py-2 text-xs text-gray-600 dark:text-zinc-300 transition-shadow hover:shadow-md'
             >
               {translate('readMore')}
             </button>
 
-            <p className='text-center text-xs font-semibold text-gray-400 '>
+            <p className='text-center text-xs font-semibold text-gray-400 dark:text-zinc-300'>
               {formatDate(article.publishedAt)}
             </p>
           </div>

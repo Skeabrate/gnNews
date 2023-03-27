@@ -20,7 +20,7 @@ const LanguageSelectBox = () => {
   const dispatch = useAppDispatch();
   const language = useAppSelector((state) => state.i18n);
 
-  const initialItem = useMemo(() => languages.find((lang) => lang.id === language), []);
+  const initialItem = useMemo(() => languages.find((lang) => lang.id === language), [language]);
 
   return (
     <Template

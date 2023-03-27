@@ -19,7 +19,7 @@ export const newsDetailsSlice = createSlice({
     toggleModal: (state) => {
       return { ...state, isOpen: !state.isOpen };
     },
-    setDetails: (state, action: PayloadAction<any>) => {
+    setDetails: (state, action: PayloadAction<TArticle>) => {
       state = {
         ...state,
         news: action.payload,
