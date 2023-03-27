@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom';
-import { scrollToTopOnPathChange } from '../hooks/useScrollToTopOnPathChange';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import SideMenu from '../components/SideMenu';
-import NewsDetailsModal from '../components/Modals/NewsDetailsModal';
-import CheckMeModal from '../components/Modals/CheckMeModal';
+import { scrollToTopOnPathChange } from './hooks/useScrollToTopOnPathChange';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import SideMenu from './components/SideMenu';
+import NewsDetailsModal from './components/Modals/NewsDetailsModal';
+import CheckMeModal from './components/Modals/CheckMeModal';
 
-export default function Root() {
+export default function App() {
   scrollToTopOnPathChange();
 
   return (

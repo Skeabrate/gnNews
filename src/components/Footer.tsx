@@ -1,21 +1,12 @@
 import { Link } from 'react-router-dom';
+import { FormattedTime } from 'react-intl';
 import { useAppSelector } from '../Redux/hooks';
 import translate from '../i18n/translate';
 
 const Footer = () => {
   const articlesCount = useAppSelector((state) => state.articlesCount);
 
-  const getDate = () => {
-    const currentDate = new Date();
-    const currentHour = currentDate.getHours();
-    const currentMin = currentDate.getMinutes();
-
-    return (
-      (currentHour <= 9 ? `0${currentHour}` : currentHour) +
-      ':' +
-      (currentMin <= 9 ? `0${currentMin}` : currentMin)
-    );
-  };
+  const getDate = () => new Date();
 
   return (
     <footer className='relative bg-zinc-900 pb-6 text-center text-white'>
@@ -25,7 +16,9 @@ const Footer = () => {
             <span className='text-brand'>gn</span>News
           </h2>
         </Link>
-        <p className='font-bold'>{getDate()}</p>
+        <p className='font-bold'>
+          <FormattedTime value={getDate()} />
+        </p>
         <p>
           {translate('footer')} <span className='font-bold'>{articlesCount}</span>
         </p>

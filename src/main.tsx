@@ -6,19 +6,19 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
+import App from './app';
 import { loader as countryLoader } from './pages/Country';
 import { loader as homeLoader } from './pages/Home';
 import Country from './pages/Country';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
-import Root from './pages/Root';
 
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
+    element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
