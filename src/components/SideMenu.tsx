@@ -29,6 +29,7 @@ const SideMenu = () => {
           <p className='flex w-full items-center justify-center'>{translate('sideMenuLabel')}</p>
 
           <button
+            aria-label='close side menu'
             onClick={toggleMenu}
             className='absolute right-0 top-1/2 -translate-y-1/2 sm:hidden '
           >

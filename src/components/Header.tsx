@@ -13,17 +13,15 @@ const Header = () => {
       <div className='mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 py-4 px-2 sm:flex-row sm:py-6 sm:px-4 md:px-6'>
         <Link
           to='/'
-          className='text-3xl font-bold'
+          className='origin-center text-3xl font-bold transition-transform hover:scale-105'
         >
-          <h1 className='origin-center transition-transform hover:scale-105'>
-            <span className='text-brand'>gn</span>News
-          </h1>
+          <span className='text-brand'>gn</span>News
         </Link>
 
-        <div className='flex gap-3'>
+        <div className='flex flex-wrap justify-center gap-3 gap-y-2'>
           <button
             onClick={() => dispatch(toggleModal())}
-            className='border border-gray-300 bg-black px-3 text-sm font-bold text-white'
+            className='h-10 border border-gray-300 bg-black px-3 text-sm font-bold text-white'
           >
             {translate('checkMe')}
           </button>

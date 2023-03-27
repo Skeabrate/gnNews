@@ -28,9 +28,9 @@ const Template = ({
 
   return (
     <div>
-      <div className='flex h-full min-w-[100px] flex-col justify-center gap-1 border border-gray-400'>
+      <div className='flex h-10 min-w-[100px] flex-col justify-center gap-1 border border-gray-400'>
         <div
-          className='flex cursor-pointer justify-between bg-white py-1 px-2'
+          className='flex cursor-pointer justify-between bg-white px-2'
           {...getToggleButtonProps()}
         >
           <div className='flex items-center gap-2'>{selectedItem.label}</div>
