@@ -8,10 +8,10 @@ const Footer = () => {
   const getDate = () => new Date();
 
   return (
-    <footer className='relative bg-zinc-900 dark:bg-black pb-6 text-center text-white'>
-      <div className='relative z-30'>
+    <footer className='relative bg-zinc-900 pb-6 text-center text-white dark:bg-black'>
+      <div className='relative z-30 flex flex-col items-center'>
         <Link to='/'>
-          <h2 className='mx-auto w-fit py-10 text-4xl font-bold transition-transform hover:scale-105'>
+          <h2 className='mx-auto py-10 text-4xl font-bold transition-transform hover:scale-105'>
             <span className='text-brand'>gn</span>News
           </h2>
         </Link>
