@@ -12,7 +12,7 @@ const List = ({ articles }: { articles: TArticle[] }) => {
       {articles.map((article, idx) => (
         <article key={idx}>
           <button
-            className='flex w-full cursor-pointer flex-col justify-between border border-t-2 px-4 pt-2 pb-4 shadow-sm transition-shadow hover:shadow-md'
+            className='flex w-full cursor-pointer flex-col justify-between border border-t-2 px-4 pt-2 pb-4 shadow-sm transition-shadow hover:shadow-md dark:border-0 dark:bg-zinc-900'
             onClick={() => {
               dispatch(toggleModal());
               dispatch(setDetails(article));

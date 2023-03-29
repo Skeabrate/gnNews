@@ -15,15 +15,10 @@ export default function App() {
       <CheckMeModal />
 
       <Header />
-
-      <div className='mx-auto grid max-w-6xl px-2 py-12 sm:grid-cols-[200px,1fr] sm:px-4 md:px-6'>
+      <main className='mx-auto grid max-w-6xl px-2 py-12 sm:grid-cols-[200px,1fr] sm:px-4 md:px-6'>
         <SideMenu />
-
-        <main>
-          <Outlet />
-        </main>
-      </div>
-
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );

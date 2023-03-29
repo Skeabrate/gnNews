@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import I18nProvider from './i18n/provider';
-import { QueryClient, QueryClientProvider } from 'react-query';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
-import App from './app';
 import { loader as countryLoader } from './pages/Country';
 import { loader as homeLoader } from './pages/Home';
 import Country from './pages/Country';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
+import App from './app';
+import './index.css';
 
 const queryClient = new QueryClient();
 

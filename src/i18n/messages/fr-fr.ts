@@ -17,5 +17,7 @@ export const fr: TLanguage = {
     noNewsFound: 'Message non trouvé.',
     source: 'Source:',
     author: 'Auteur:',
+    themeLight: 'Clair',
+    themeDark: 'Sombre',
   },
 };

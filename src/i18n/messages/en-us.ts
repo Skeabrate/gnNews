@@ -17,5 +17,7 @@ export const en: TLanguage = {
     noNewsFound: 'No news found.',
     source: 'Source:',
     author: 'Author:',
+    themeLight: 'Light',
+    themeDark: 'Dark',
   },
 };

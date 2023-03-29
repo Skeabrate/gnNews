@@ -10,10 +10,10 @@ const Template = ({
       <button
         aria-label='close popup'
         onClick={toggleModal}
-        className='absolute inset-0 h-full w-full cursor-default bg-gray-300/50 dark:bg-gray-600/50 backdrop-blur-[10px] backdrop-filter'
+        className='absolute inset-0 h-full w-full cursor-default bg-gray-300/50 backdrop-blur-[10px] backdrop-filter dark:bg-gray-600/50'
       ></button>
 
-      <div className='relative z-10 w-11/12 animate-fadeInModal bg-white dark:bg-zinc-900 shadow-md sm:w-5/6 sm:max-w-4xl'>
+      <div className='relative z-10 w-11/12 animate-fadeInModal bg-white shadow-md dark:bg-zinc-900 sm:w-5/6 sm:max-w-4xl'>
         <button
           aria-label='close popup'
           onClick={toggleModal}

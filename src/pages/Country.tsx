@@ -1,8 +1,10 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { useAppSelector } from '../Redux/hooks';
+import { LOCALES } from '../i18n/locales';
 import { COUNTRIES } from '../utils/countries';
 import { GNEWS_API_URL } from '../utils/news-api';
+import { getLanguage } from '../utils/getLanguage';
 import { useArticlesLength } from '../hooks/useArticlesLength';
 import NewsArticles from '../components/NewsArticles';
 
@@ -17,20 +19,17 @@ const countryNewsQuery = (code: string, lang: string) => ({
 });
 
 export const loader =
-  (queryClient, lang = 'en') =>
+  (queryClient, lang = getLanguage(LOCALES.ENGLISH)) =>
   async ({ params }) => {
-    const query = countryNewsQuery(params.contactId, lang);
+    const query = countryNewsQuery(params.code, lang);
     return queryClient.getQueryData(query.queryKey) ?? (await queryClient.fetchQuery(query));
   };
 
 const Country = () => {
   const { code } = useParams();
-
   const language = useAppSelector((state) => state.i18n);
-  const languageToFetch = language.split('-')[0];
-
   const { data, isLoading, isRefetching, isError } = useQuery(
-    countryNewsQuery(code, languageToFetch)
+    countryNewsQuery(code, getLanguage(language))
   );
 
   useArticlesLength(data?.articles?.length);
@@ -41,7 +40,7 @@ const Country = () => {
   return (
     <div>
       <NewsArticles
-        articles={data?.articles}
+        articles={getFullCountryName(code?.toUpperCase()) ? data?.articles : []}
         country={getFullCountryName(code?.toUpperCase())}
         isLoading={isLoading || isRefetching}
         isError={isError}

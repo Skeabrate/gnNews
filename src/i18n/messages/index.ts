@@ -17,6 +17,8 @@ export type TTranslateValues = {
   noNewsFound: string;
   source: string;
   author: string;
+  themeLight: string;
+  themeDark: string;
 };
 
 export type TLanguage = {

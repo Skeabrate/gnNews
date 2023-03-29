@@ -1,9 +1,11 @@
 import { useQuery } from 'react-query';
 import { useAppSelector } from '../Redux/hooks';
 import { GNEWS_API_URL } from '../utils/news-api';
+import { getLanguage } from '../utils/getLanguage';
 import { useArticlesLength } from '../hooks/useArticlesLength';
-import NewsArticles from '../components/NewsArticles';
+import { LOCALES } from '../i18n/locales';
 import translate from '../i18n/translate';
+import NewsArticles from '../components/NewsArticles';
 
 const getMainNews = (lang: string) => {
   return fetch(GNEWS_API_URL({ lang })).then((res) => res.json());
@@ -17,7 +19,7 @@ const mainNewsQuery = (lang: string) => ({
 });
 
 export const loader =
-  (queryClient, lang = 'en') =>
+  (queryClient, lang = getLanguage(LOCALES.ENGLISH)) =>
   async () => {
     const query = mainNewsQuery(lang);
     return queryClient.getQueryData(query.queryKey) ?? (await queryClient.fetchQuery(query));
@@ -25,9 +27,7 @@ export const loader =
 
 const Home = () => {
   const language = useAppSelector((state) => state.i18n);
-  const getLanguage = language.split('-')[0];
-
-  const { isLoading, isRefetching, isError, data } = useQuery(mainNewsQuery(getLanguage));
+  const { isLoading, isRefetching, isError, data } = useQuery(mainNewsQuery(getLanguage(language)));
 
   useArticlesLength(data?.articles?.length);
 

@@ -1,17 +1,13 @@
 import { Link } from 'react-router-dom';
-import translate from '../i18n/translate';
-import { useAppDispatch } from '../Redux/hooks';
-import { toggleModal } from '../Redux/slices/checkMe';
+import CheckMeButton from './CheckMeButton';
 import LanguageSelectBox from './SelectBoxes/LanguageSelectBox';
 import ThemeSelectBox from './SelectBoxes/ThemeSelectBox';
 import ViewSelectBox from './SelectBoxes/ViewSelectBox';
 
 const Header = () => {
-  const dispatch = useAppDispatch();
-
   return (
-    <header className='border-b border-gray-300 dark:border-black bg-zinc-50 dark:bg-zinc-900 shadow-md '>
-      <div className='mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 py-4 px-2 sm:flex-row sm:py-6 sm:px-4 md:px-6'>
+    <header className='border-b border-gray-300 bg-zinc-50 shadow-md dark:border-black dark:bg-zinc-900 '>
+      <nav className='mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 py-4 px-2 sm:flex-row sm:py-6 sm:px-4 md:px-6'>
         <Link
           to='/'
           className='origin-center text-3xl font-bold transition-transform hover:scale-105'
@@ -19,19 +15,21 @@ const Header = () => {
           <span className='text-brand'>gn</span>News
         </Link>
 
-        <div className='flex flex-wrap justify-center gap-3 gap-y-2'>
-          <button
-            onClick={() => dispatch(toggleModal())}
-            className='h-12 border border-gray-300 bg-black px-3 text-sm font-bold text-white'
-          >
-            {translate('checkMe')}
-          </button>
-
-          <ThemeSelectBox />
-          <LanguageSelectBox />
-          <ViewSelectBox />
-        </div>
-      </div>
+        <ul className='flex flex-wrap justify-center gap-3 gap-y-2'>
+          <li>
+            <CheckMeButton />
+          </li>
+          <li>
+            <ThemeSelectBox />
+          </li>
+          <li>
+            <LanguageSelectBox />
+          </li>
+          <li>
+            <ViewSelectBox />
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };
