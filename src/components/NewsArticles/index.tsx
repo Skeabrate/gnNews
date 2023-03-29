@@ -1,13 +1,15 @@
-import { useAppSelector } from '../../Redux/hooks';
+import { useMemo } from 'react';
+import { useAppSelector } from '../../redux/hooks';
 import { TArticle } from '../../types/article';
 import { NEWS_VIEWS } from '../../utils/newsViews';
 import translate from '../../i18n/translate';
-import ClipLoader from 'react-spinners/ClipLoader';
-import List from './List';
-import Tiles from './Tiles';
+import Tiles from './Tiles/Tiles';
+import SkeletonTiles from './Tiles/Skeleton';
+import List from './List/List';
+import SkeletonList from './List/Skeleton';
 
 const NewsArticles = ({
-  articles,
+  articles = [],
   country,
   isLoading,
   isError,
@@ -18,6 +20,20 @@ const NewsArticles = ({
   isError: boolean;
 }) => {
   const viewType = useAppSelector((state) => state.activeView);
+
+  const views = useMemo(
+    () => ({
+      [NEWS_VIEWS[0].id]: {
+        view: <Tiles articles={articles} />,
+        skeletonLoader: <SkeletonTiles />,
+      },
+      [NEWS_VIEWS[1].id]: {
+        view: <List articles={articles} />,
+        skeletonLoader: <SkeletonList />,
+      },
+    }),
+    [articles]
+  );
 
   return (
     <section>
@@ -35,18 +51,13 @@ const NewsArticles = ({
       </h1>
 
       {isLoading ? (
-        <p className='flex min-h-[400px] items-center justify-center '>
-          <ClipLoader size={50} />
-        </p>
+        views[viewType].skeletonLoader
       ) : isError ? (
-        <p>{translate('error')}</p>
+        <p className='min-h-[400px]'>{translate('error')}</p>
       ) : !articles.length ? (
-        <p>{translate('noNewsFound')}</p>
+        <p className='min-h-[400px]'>{translate('noNewsFound')}</p>
       ) : (
-        <>
-          {viewType === NEWS_VIEWS[0].id && <Tiles articles={articles} />}
-          {viewType === NEWS_VIEWS[1].id && <List articles={articles} />}
-        </>
+        views[viewType].view
       )}
     </section>
   );

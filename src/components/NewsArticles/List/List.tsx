@@ -1,8 +1,8 @@
-import { TArticle } from '../../types/article';
-import { formatDate } from '../../utils/formatDate';
-import { useAppDispatch } from '../../Redux/hooks';
-import { toggleModal, setDetails } from '../../Redux/slices/newsDetails';
-import SourceBadge from '../SourceBadge';
+import { TArticle } from '../../../types/article';
+import { formatDate } from '../../../utils/formatDate';
+import { useAppDispatch } from '../../../redux/hooks';
+import { toggleModal, setDetails } from '../../../redux/slices/newsDetails';
+import SourceBadge from '../../SourceBadge';
 
 const List = ({ articles }: { articles: TArticle[] }) => {
   const dispatch = useAppDispatch();

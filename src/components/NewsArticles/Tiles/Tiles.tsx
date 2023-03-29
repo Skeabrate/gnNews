@@ -1,10 +1,10 @@
-import { TArticle } from '../../types/article';
-import { formatDate } from '../../utils/formatDate';
-import { useAppDispatch } from '../../Redux/hooks';
-import { toggleModal, setDetails } from '../../Redux/slices/newsDetails';
-import translate from '../../i18n/translate';
-import PlaceholderImage from '../../assets/placeholder-image.jpg';
-import SourceBadge from '../SourceBadge';
+import { TArticle } from '../../../types/article';
+import { formatDate } from '../../../utils/formatDate';
+import { useAppDispatch } from '../../../redux/hooks';
+import { toggleModal, setDetails } from '../../../redux/slices/newsDetails';
+import translate from '../../../i18n/translate';
+import PlaceholderImage from '../../../assets/placeholder-image.jpg';
+import SourceBadge from '../../SourceBadge';
 
 const Tiles = ({ articles }: { articles: TArticle[] }) => {
   const dispatch = useAppDispatch();

@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { LOCALES } from '../../i18n/locales';
-import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
-import { changeLanguage } from '../../Redux/slices/i18n';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { changeLanguage } from '../../redux/slices/i18n';
 import { getCountryCode } from '../../utils/getCountryCode';
 import Template from './Template';
 import Flag from '../Flag';

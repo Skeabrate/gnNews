@@ -6,4 +6,4 @@ export const NEWS_API_URL = (code?: string) =>
 export const GNEWS_API_URL = ({ code, lang }: { code?: string; lang: string }) =>
   `https://gnews.io/api/v4/top-headlines?lang=${lang}${
     code ? '&country=' + code?.toLowerCase() : ''
-  }&max=10&apikey=${import.meta.env.VITE_GNEWS_API_KEY}`;
+  }&apikey=${import.meta.env.VITE_GNEWS_API_KEY}`;

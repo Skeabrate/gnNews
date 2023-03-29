@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { useAppSelector } from '../Redux/hooks';
+import { useAppSelector } from '../redux/hooks';
 import { LOCALES } from '../i18n/locales';
 import { COUNTRIES } from '../utils/countries';
 import { GNEWS_API_URL } from '../utils/news-api';
@@ -14,7 +14,7 @@ const getCountry = (code: string, lang: string) =>
 const countryNewsQuery = (code: string, lang: string) => ({
   queryKey: ['country', code, lang],
   queryFn: async () => getCountry(code, lang),
-  staleTime: 1000 * 60 * 5,
+  staleTime: 1000 * 60 * 2,
   refetchOnWindowFocus: false,
 });
 

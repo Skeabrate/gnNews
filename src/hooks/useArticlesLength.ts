@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useAppDispatch } from '../Redux/hooks';
-import { updateArticlesCount } from '../Redux/slices/articlesCount';
+import { useAppDispatch } from '../redux/hooks';
+import { updateArticlesCount } from '../redux/slices/articlesCount';
 
 export const useArticlesLength = (dataLength?: number) => {
   const dispatch = useAppDispatch();

@@ -1,6 +1,6 @@
 import translate from '../i18n/translate';
-import { useAppDispatch } from '../Redux/hooks';
-import { toggleModal } from '../Redux/slices/checkMe';
+import { useAppDispatch } from '../redux/hooks';
+import { toggleModal } from '../redux/slices/checkMe';
 import Waves from './Waves/Waves';
 
 const CheckMeButton = () => {
