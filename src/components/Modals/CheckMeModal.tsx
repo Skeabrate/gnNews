@@ -9,8 +9,19 @@ const CheckMeModal = () => {
   if (!isOpen) return null;
 
   return (
-    <Template toggleModal={() => dispatch(toggleModal())}>
-      <div className='p-4'>Największą trudność sprawiło mi:</div>
+    <Template
+      blackButton
+      toggleModal={() => dispatch(toggleModal())}
+    >
+      <div className='max-h-screen overflow-y-auto p-3 pt-16 sm:p-6 sm:pt-16'>
+        Wykonując to zadanie nie napotkałem żadnych większych trudności. Są to technologie, w
+        których tworzę projekty na co dzień, często wykorzystuję też Next.js czy Gatsby. Ciesze się,
+        że robiąc to zadanie mogłem odświeżyć sobie nową wersję biblioteki react-router-dom oraz jej
+        integrację z react-query. Nowością była dla mnie biblioteka Format.js, ale wdrażanie jej do
+        projektu było proste i przyjemne. Ewentualne możliwości rozwoju strony, jakie widzę to np.:
+        paginacja artykułów (podział na strony lub infinite scroll), pobieranie artykułów po stronie
+        serwera (SSR) w celu poprawy SEO, jednak w tym celu wykorzystałbym już raczej Nextjs.
+      </div>
     </Template>
   );
 };
