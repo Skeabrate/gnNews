@@ -10,7 +10,10 @@ const Tiles = ({ articles }: { articles: TArticle[] }) => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className='grid animate-fadeIn gap-x-6 gap-y-8 md:grid-cols-2'>
+    <div
+      data-testid='tiles-view'
+      className='grid animate-fadeIn gap-x-6 gap-y-8 md:grid-cols-2'
+    >
       {articles.map((article, idx) => (
         <article
           key={idx}

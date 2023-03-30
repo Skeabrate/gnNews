@@ -8,7 +8,10 @@ const List = ({ articles }: { articles: TArticle[] }) => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className='grid animate-fadeIn gap-5 opacity-0'>
+    <div
+      data-testid='list-view'
+      className='grid animate-fadeIn gap-5 opacity-0'
+    >
       {articles.map((article, idx) => (
         <article key={idx}>
           <button

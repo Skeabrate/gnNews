@@ -30,12 +30,12 @@ const Template = ({
     <div>
       <div className='relative flex h-12 min-w-[100px] flex-col justify-center gap-1 border border-gray-300'>
         <div
-          data-testId='select-box-toggle'
+          data-testid='select-box-toggle'
           className='flex h-full cursor-pointer justify-between'
           {...getToggleButtonProps()}
         >
           <div
-            data-testId={selectedItem.id}
+            data-testid={selectedItem.id}
             className='flex items-center gap-2 px-2 md:px-3'
           >
             {selectedItem.label}
@@ -55,7 +55,7 @@ const Template = ({
         {isOpen &&
           items.map((item, index) => (
             <li
-              data-testId={`list-item-${item.id}`}
+              data-testid={`list-item-${item.id}`}
               className={cx(
                 highlightedIndex === index && 'bg-blue-200 dark:bg-black',
                 selectedItem === item && 'font-bold',
