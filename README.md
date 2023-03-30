@@ -13,7 +13,9 @@ Website Url: https://gnnews-skeabrate.vercel.app/
 
 Api: https://gnews.io
 Wybrałem gnews API, bo umożliwia pobieranie danych w zdeployowanym projekcie oraz udostępnia newsy w wielu językach. Minusem jest za to mała ilość dostępnych zapytań, daltego cache danych w react-query ustawiłem na 2 minuty. Jednak w razie wyczerpania jednego klucza udostępniam dwa klucze:
+
 Klucz1: 4fa98e1c59ff225fe6372b9c3193de63
+
 Klucz2: 0501a5597956262cf277399f44c888dd
 
 ## Statyczna analiza kodu:
