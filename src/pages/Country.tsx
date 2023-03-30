@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { useAppSelector } from '../redux-tk/hooks';
+import { useAppSelector } from '../redux/hooks';
 import { LOCALES } from '../i18n/locales';
 import { COUNTRIES } from '../utils/countries';
 import { GNEWS_API_URL } from '../utils/news-api';

@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useAppSelector } from '../../redux-tk/hooks';
+import { useAppSelector } from '../../redux/hooks';
 import { TArticle } from '../../types/article';
 import { NEWS_VIEWS } from '../../utils/newsViews';
 import translate from '../../i18n/translate';

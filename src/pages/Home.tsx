@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { useAppSelector } from '../redux-tk/hooks';
+import { useAppSelector } from '../redux/hooks';
 import { GNEWS_API_URL } from '../utils/news-api';
 import { getLanguage } from '../utils/getLanguage';
 import { useArticlesLength } from '../hooks/useArticlesLength';

@@ -1,5 +1,5 @@
-import { useAppDispatch } from '../../redux-tk/hooks';
-import { changeActiveView } from '../../redux-tk/slices/activeView';
+import { useAppDispatch } from '../../redux/hooks';
+import { changeActiveView } from '../../redux/slices/activeView';
 import { NEWS_VIEWS } from '../../utils/newsViews';
 import Template from './Template';
 

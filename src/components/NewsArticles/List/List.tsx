@@ -1,7 +1,7 @@
 import { TArticle } from '../../../types/article';
 import { formatDate } from '../../../utils/formatDate';
-import { useAppDispatch } from '../../../redux-tk/hooks';
-import { toggleModal, setDetails } from '../../../redux-tk/slices/newsDetails';
+import { useAppDispatch } from '../../../redux/hooks';
+import { toggleModal, setDetails } from '../../../redux/slices/newsDetails';
 import SourceBadge from '../../SourceBadge';
 
 const List = ({ articles }: { articles: TArticle[] }) => {

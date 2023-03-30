@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from '../../redux-tk/hooks';
-import { toggleModal } from '../../redux-tk/slices/newsDetails';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { toggleModal } from '../../redux/slices/newsDetails';
 import { formatDate } from '../../utils/formatDate';
 import translate from '../../i18n/translate';
 import PlaceholderImage from '../../assets/placeholder-image.jpg';
