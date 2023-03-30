@@ -1,6 +1,6 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
-import { useAppSelector } from '../redux/hooks';
+import { useAppSelector } from '../redux-tk/hooks';
 import messages from './messages';
 
 const I18nProvider = ({ children }: { children: React.ReactNode }) => {

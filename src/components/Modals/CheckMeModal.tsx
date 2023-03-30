@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { toggleModal } from '../../redux/slices/checkMe';
+import { useAppDispatch, useAppSelector } from '../../redux-tk/hooks';
+import { toggleModal } from '../../redux-tk/slices/checkMe';
 import Template from './Template';
 
 const CheckMeModal = () => {

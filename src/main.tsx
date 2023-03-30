@@ -4,7 +4,7 @@ import I18nProvider from './i18n/provider';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import { store } from './redux-tk/store';
 import { loader as countryLoader } from './pages/Country';
 import { loader as homeLoader } from './pages/Home';
 import Country from './pages/Country';

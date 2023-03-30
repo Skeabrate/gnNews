@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FormattedTime } from 'react-intl';
-import { useAppSelector } from '../redux/hooks';
+import { useAppSelector } from '../redux-tk/hooks';
 import translate from '../i18n/translate';
 import Waves from './Waves/Waves';
 
