@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelect } from 'downshift';
 import cx from 'classnames';
 
-type TSelectItem = { id: string; label: React.ReactNode | string };
+export type TSelectItem = { id: string; label: React.ReactNode | string };
 
 const Template = ({
   items,
@@ -30,10 +30,16 @@ const Template = ({
     <div>
       <div className='relative flex h-12 min-w-[100px] flex-col justify-center gap-1 border border-gray-300'>
         <div
-          className='flex cursor-pointer justify-between h-full'
+          data-testId='select-box-toggle'
+          className='flex h-full cursor-pointer justify-between'
           {...getToggleButtonProps()}
         >
-          <div className='flex items-center gap-2 px-2 md:px-3'>{selectedItem.label}</div>
+          <div
+            data-testId={selectedItem.id}
+            className='flex items-center gap-2 px-2 md:px-3'
+          >
+            {selectedItem.label}
+          </div>
           <span className='flex items-center justify-center px-2'>
             {isOpen ? <>&#8593;</> : <>&#8595;</>}
           </span>
@@ -41,7 +47,7 @@ const Template = ({
       </div>
       <ul
         className={cx(
-          'absolute z-10 mt-2 w-32 bg-white dark:bg-zinc-900 p-0 shadow-md border border-gray-300',
+          'absolute z-10 mt-2 w-32 border border-gray-300 bg-white p-0 shadow-md dark:bg-zinc-900',
           !isOpen && 'hidden'
         )}
         {...getMenuProps()}
@@ -49,10 +55,11 @@ const Template = ({
         {isOpen &&
           items.map((item, index) => (
             <li
+              data-testId={`list-item-${item.id}`}
               className={cx(
                 highlightedIndex === index && 'bg-blue-200 dark:bg-black',
                 selectedItem === item && 'font-bold',
-                'flex cursor-pointer h-12 px-2 shadow-sm'
+                'flex h-12 cursor-pointer px-2 shadow-sm'
               )}
               key={`${item.id}${index}`}
               {...getItemProps({ item, index })}
