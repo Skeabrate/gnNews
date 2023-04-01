@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { FormattedTime } from 'react-intl';
 import { useAppSelector } from '../redux/hooks';
+import { useTime } from '../hooks/useTime';
 import translate from '../i18n/translate';
 import Waves from './Waves/Waves';
 
 const Footer = () => {
+  const { currentTime } = useTime();
   const articlesCount = useAppSelector((state) => state.articlesCount);
-  const getDate = () => new Date();
 
   return (
     <footer className='relative bg-zinc-900 pb-6 text-center text-white dark:bg-black'>
@@ -17,7 +18,7 @@ const Footer = () => {
           </h2>
         </Link>
         <p className='font-bold'>
-          <FormattedTime value={getDate()} />
+          <FormattedTime value={currentTime} />
         </p>
         <p>
           {translate('footer')} <span className='font-bold'>{articlesCount}</span>
